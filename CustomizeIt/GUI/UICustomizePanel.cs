@@ -61,7 +61,7 @@ namespace CustomizeIt.GUI
             width = UIPanelWrapper.Instance.width = UITitleBar.Instance.width = UITitleBar.Instance.dragHandle.width = widest;
             UITitleBar.Instance.RecenterElements();
             AlignChildren();
-            height = (Inputs.Count * (UIUtil.textFieldHeight + UIUtil.textFieldMargin)) + (UIUtil.textFieldMargin * 2);            
+            height = (Inputs.Count * (UIUtil.textFieldHeight + UIUtil.textFieldMargin)) + (UIUtil.textFieldMargin * 3);            
             UIPanelWrapper.Instance.height = height + UITitleBar.Instance.height;
             var anchor = CustomizeIt.instance.ServiceBuildingInfoPanel.component;
             UIPanelWrapper.Instance.relativePosition = new Vector3((Screen.width/2) - (width/2), (Screen.height/2) - (height/2)); ;//new Vector3(anchor.relativePosition.x + anchor.width + (UIUtil.textFieldMargin * 2), anchor.relativePosition.y);
@@ -74,16 +74,15 @@ namespace CustomizeIt.GUI
             
             for (int i = 0; i < Inputs.Count; i++)
             {
-                float finalY = (i * UIUtil.textFieldHeight) + ((UIUtil.textFieldMargin) * (i + 1));
+                float finalY = (i * UIUtil.textFieldHeight) + ((UIUtil.textFieldMargin) * (i + 2));
 
                 if (i < labels.Count)
                 {
                     float labelX = inputX - labels[i].width - (UIUtil.textFieldMargin * 2);
                     labels[i].relativePosition = new Vector3(labelX, finalY + 4);
                 }
-                Inputs[i].relativePosition = Inputs[i] is UICheckBox ? new Vector3(inputX / 3f, finalY) : new Vector3(inputX, finalY);
+                Inputs[i].relativePosition = Inputs[i] is UICheckBox ? new Vector3(inputX + ((UIUtil.textFieldWidth - Inputs[i].width) / 2), finalY + ((UIUtil.textFieldHeight - Inputs[i].height) / 2)) : new Vector3(inputX, finalY);
             }
-
         }
     }
 }

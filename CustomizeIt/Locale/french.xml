@@ -100,5 +100,6 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Prise d'eau" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Sortie d'eau" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Réserve d'eau" />
+    <Translation ID="CUSTOMIZE-IT-RESET" String="Réinit." />
   </Translations>
 </Language>

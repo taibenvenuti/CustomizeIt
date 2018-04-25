@@ -100,5 +100,6 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Vattenintag" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Vattenutlopp" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Vattenöverskott" />
+    <Translation ID="CUSTOMIZE-IT-RESET" String="Återställ" />
   </Translations>
 </Language>

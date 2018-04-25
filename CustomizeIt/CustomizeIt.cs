@@ -59,7 +59,7 @@ namespace CustomizeIt
 
                 if (ServiceBuildingInfoPanel != null)
                 {
-                    AddBuildingPanelControls(ServiceBuildingInfoPanel, out customizeButton, new Vector3(-7f, 45f, 0f));  
+                    AddBuildingPanelControls(ServiceBuildingInfoPanel, out customizeButton, new Vector3(-7f, 43f, 0f));  
                     inizializedButton = true;
                 }
             }

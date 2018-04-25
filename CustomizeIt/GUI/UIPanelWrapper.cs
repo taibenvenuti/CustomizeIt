@@ -19,7 +19,8 @@ namespace CustomizeIt.GUI
             name = "CustomizeItPanelWrapper";
             padding = new RectOffset(10, 10, 4, 4);
             relativePosition = new Vector3(10, 60);
-            backgroundSprite = "MenuPanel";            
+            backgroundSprite = "MenuPanel";
+            zOrder = 0;
             SetupControls();
         }
         public override void Update()

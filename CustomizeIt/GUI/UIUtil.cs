@@ -9,6 +9,7 @@ namespace CustomizeIt.GUI
         public const float textFieldHeight = 23f;
         public const float textFieldWidth = 100f;
         public const float textFieldMargin = 5f;
+        private static string ResetText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-RESET");
 
         public static Dictionary<string, string> FieldNames => UpdateTranslations();
 
@@ -143,15 +144,19 @@ namespace CustomizeIt.GUI
         {
             UIButton button = parentComponent.AddUIComponent<UIButton>();
             button.name = "CustomizeItResetButton";
-            button.text = "Reset";
-            button.normalBgSprite = "ButtonSmall";
-            button.disabledBgSprite = "ButtonSmallDisabled";
-            button.hoveredBgSprite = "ButtonSmallHovered";
-            button.focusedBgSprite = "ButtonSmall";
-            button.pressedBgSprite = "ButtonSmallPressed";
+            button.text = ResetText;
             button.width = textFieldWidth;
             button.height = textFieldHeight;
-            button.textPadding = new RectOffset(0, 0, 3, 0);
+            button.textPadding = new RectOffset(0, 0, 5, 0);
+            button.horizontalAlignment = UIHorizontalAlignment.Center;
+            button.textVerticalAlignment = UIVerticalAlignment.Middle;
+            button.textScale = 0.8f;
+            button.atlas = UIView.GetAView().defaultAtlas;
+            button.normalBgSprite = "ButtonMenu";
+            button.disabledBgSprite = "ButtonMenuDisabled";
+            button.hoveredBgSprite = "ButtonMenuHovered";
+            button.focusedBgSprite = "ButtonMenu";
+            button.pressedBgSprite = "ButtonMenuPressed";
             button.eventClick += (c, e) =>
             {
                 var building = CustomizeIt.instance.CurrentBuilding;
@@ -188,25 +193,20 @@ namespace CustomizeIt.GUI
             UICheckBox checkBox = parent.AddUIComponent<UICheckBox>();
 
             checkBox.name = fieldName;
-            checkBox.width = parent.width - 10;
+            checkBox.width = 20f;
             checkBox.height = 20f;
-            checkBox.relativePosition = new Vector3(5, 21);
+            checkBox.relativePosition = Vector3.zero;
 
             UISprite sprite = checkBox.AddUIComponent<UISprite>();
-            sprite.spriteName = "InfoIconBaseHovered";
+            sprite.spriteName = "ToggleBase";
             sprite.size = new Vector2(16f, 16f);
-            sprite.relativePosition = new Vector3(229, 0);
+            sprite.relativePosition = new Vector3(2f, 2f);
 
             checkBox.checkedBoxObject = sprite.AddUIComponent<UISprite>();
-            ((UISprite)checkBox.checkedBoxObject).spriteName = "InfoIconBaseFocused";
+            ((UISprite)checkBox.checkedBoxObject).spriteName = "ToggleBaseFocused";
             checkBox.checkedBoxObject.size = new Vector2(16f, 16f);
             checkBox.checkedBoxObject.relativePosition = Vector3.zero;
 
-            checkBox.label = checkBox.AddUIComponent<UILabel>();
-            checkBox.autoSize = false;
-            checkBox.label.textScale = 0.8f;
-            checkBox.label.width = parent.width - 22;
-            checkBox.label.relativePosition = new Vector3(0, 3);
             checkBox.eventCheckChanged += EventCheckChangedHandler;
             checkBox.isChecked = (bool)CustomizeIt.instance.CurrentBuilding.m_buildingAI.GetType().GetField(fieldName).GetValue(CustomizeIt.instance.CurrentBuilding.m_buildingAI);
             return checkBox;
