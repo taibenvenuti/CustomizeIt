@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="nl" ReadableName="Dutch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="CUSTOMIZE-IT-MODDESCRIPTION" String="Verander verschillende waardes van gebouwen, bijvoorbeeld Vuilnis Verzameling, Energieverbruik en meer!" />
+    <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="Constructiekosten" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="Onderhoudskosten" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="Energieverbruik" />
+    <Translation ID="CUSTOMIZE-IT-m_waterConsumption" String="Waterverbruik" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageAccumulation" String="Afvalwater Ophoping" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageAccumulation" String="Vuilnis Ophoping" />
+    <Translation ID="CUSTOMIZE-IT-m_fireHazard" String="Brandgevaar" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTolerance" String="Brandbestendigheid" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount0" String="Laag Inkomen Toeristen" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount1" String="Modaal Inkomen Toeristen" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="Hoog Inkomen Toeristen" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentAccumulation" String="Entertainment-Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentRadius" String="Entertainment Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount0" String="Ongeschoolde Werknemers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount1" String="Opgeleide Werknemers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount2" String="Goed Opgeleide Werknemers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount3" String="Hoogopgeleide Werknemers" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseAccumulation" String="Geluidsaccumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseRadius" String="Geluidsradius" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportAccumulation" String="Goederentransport Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportRadius" String="Goederentransport Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_hearseCount" String="Aantal Lijkwagens" />
+    <Translation ID="CUSTOMIZE-IT-m_corpseCapacity" String="Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_burialRate" String="Begrafenis Ratio" />
+    <Translation ID="CUSTOMIZE-IT-m_graveCount" String="Aantal Graven" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareAccumulation" String="Dodenverzorging Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareRadius" String="Dodenverzorging Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_helicopterCount" String="Aantal Helicopters" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleCount" String="Aantal Voertuigen" />
+    <Translation ID="CUSTOMIZE-IT-m_detectionRange" String="Reikwijdte van detectie" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentAccumulation" String="Brandweer Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentRadius" String="Brandweer Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTruckCount" String="Aantal Brandweerwagens" />
+    <Translation ID="CUSTOMIZE-IT-m_firewatchRadius" String="Vuurwaarneming Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_educationAccumulation" String="Educatie Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_educationRadius" String="Educatie Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_studentCount" String="Aantal Studenten" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceCapacity" String="Delfstoffen Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceConsumption" String="Delfstoffen Consumptie" />
+    <Translation ID="CUSTOMIZE-IT-m_heatingProduction" String="Verwarmingsproductie" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionAccumulation" String="Vervuiling Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionRadius" String="Vervuiling Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_ambulanceCount" String="Aantal Ambulances" />
+    <Translation ID="CUSTOMIZE-IT-m_patientCapacity" String="Patienten Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_curingRate" String="Genezingsratio" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareAccumulation" String="Gezondheidszorg Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareRadius" String="Gezondheidszorg Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_animalCount" String="Aantal Dieren" />
+    <Translation ID="CUSTOMIZE-IT-m_collectRadius" String="Afvalinzameling Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityProduction" String="Elektriciteit Productie" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageCapacity" String="Afvalcapaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageConsumption" String="Afvalconsumptie" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageTruckCount" String="Aantal Vuilniswagens" />
+    <Translation ID="CUSTOMIZE-IT-m_materialProduction" String="Materiaal Productie" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceRadius" String="Onderhoud Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceTruckCount" String="Aantal Onderhoudswagens" />
+    <Translation ID="CUSTOMIZE-IT-m_monumentLevel" String="Monument Niveau" />
+    <Translation ID="CUSTOMIZE-IT-m_attractivenessAccumulation" String="Aantrekkelijkheid Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_animalArea" String="Dierengebied" />
+    <Translation ID="CUSTOMIZE-IT-m_landValueAccumulation" String="Landwaarde Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_jailCapacity" String="Gevangenis Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_policeCarCount" String="Aantal Politiewagens" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentAccumulation" String="Politie Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentRadius" String="Politie Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_sentenceWeeks" String="Gevangenisstraf Weken" />
+    <Translation ID="CUSTOMIZE-IT-m_batteryFactor" String="Batterij Factor" />
+    <Translation ID="CUSTOMIZE-IT-m_transmitterPower" String="Signaalsterkte" />
+    <Translation ID="CUSTOMIZE-IT-m_capacity" String="Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_disasterCoverageAccumulation" String="Rampdekking Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileAmount" String="Hoeveelheid Elektriciteitsvoorraad" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileRate" String="Elektriciteitsvoorraad Ratio" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationBusCount" String="Aantal Evacuatiebussen" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationRange" String="Evacuatie Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsConsumptionRate" String="Goederen Consumptie Ratio" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsStockpileAmount" String="Hoeveelheid Goederenvoorraad" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileAmount" String="Hoeveelheid Watervoorraad" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileRate" String="Watervoorraad Ratio" />
+    <Translation ID="CUSTOMIZE-IT-m_snowCapacity" String="Sneeuw Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_snowConsumption" String="Sneeuw Consumptie" />
+    <Translation ID="CUSTOMIZE-IT-m_snowTruckCount" String="Aantal Sneeuwschuivers" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportAccumulation" String="Openbaar Vervoer Accumulatie" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportRadius" String="Openbaar Vervoer Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_residentCapacity" String="Inwoners Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor0" String="Toerist Factor 1" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Toerist Factor 2" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Toerist Factor 3" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Maximaal Aantal Voertuigen" />
+    <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Schoonmaak Ratio" />
+    <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Maximale Waterafstand" />
+    <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Afvoer Vervuiling" />
+    <Translation ID="CUSTOMIZE-IT-m_pumpingVehicles" String="Aantal Pompvoertuigen" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageOutlet" String="Afvalwateruitlaat" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageStorage" String="Afvalwater Opslag" />
+    <Translation ID="CUSTOMIZE-IT-m_useGroundWater" String="Gebruik Grondwater" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleRadius" String="Voertuig Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Water Inname" />
+    <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Wateruitlaat" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Opslag" />
+  </Translations>
+</Language>

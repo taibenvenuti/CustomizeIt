@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="en" ReadableName="English" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="CUSTOMIZE-IT-MODDESCRIPTION" String="Change various values on buildings such as garbage accumulation, energy consumption and more!" />
+    <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="Construction Cost" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="Maintenance Cost" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="Electricity Consumption" />
+    <Translation ID="CUSTOMIZE-IT-m_waterConsumption" String="Water Consumption" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageAccumulation" String="Sewage Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageAccumulation" String="Garbage Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_fireHazard" String="Fire Hazard" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTolerance" String="Fire Tolerance" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount0" String="Low Wealth Tourists" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount1" String="Medium Wealth Tourists" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="High Wealth Tourists" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentAccumulation" String="Entertainment Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentRadius" String="Entertainment Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount0" String="Uneducated Workers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount1" String="Educated Workers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount2" String="Well Educated Workers" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount3" String="Highly Educated Workers" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseAccumulation" String="Noise Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseRadius" String="Noise Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportAccumulation" String="Cargo Transport Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportRadius" String="Cargo Transport Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_hearseCount" String="Hearse Count" />
+    <Translation ID="CUSTOMIZE-IT-m_corpseCapacity" String="Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_burialRate" String="Burial Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_graveCount" String="Grave Count" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareAccumulation" String="Deathcare Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareRadius" String="Deathcare Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_helicopterCount" String="Helicopter Count" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleCount" String="Vehicle Count" />
+    <Translation ID="CUSTOMIZE-IT-m_detectionRange" String="Detection Range" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentAccumulation" String="Fire Department Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentRadius" String="Fire Department Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTruckCount" String="Fire Truck Count" />
+    <Translation ID="CUSTOMIZE-IT-m_firewatchRadius" String="Firewatch Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_educationAccumulation" String="Education Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_educationRadius" String="Education Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_studentCount" String="Student Count" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceCapacity" String="Resource Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceConsumption" String="Resource Consumption" />
+    <Translation ID="CUSTOMIZE-IT-m_heatingProduction" String="Heating Production" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionAccumulation" String="Pollution Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionRadius" String="Pollution Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_ambulanceCount" String="Ambulance Count" />
+    <Translation ID="CUSTOMIZE-IT-m_patientCapacity" String="Patient Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_curingRate" String="Curing Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareAccumulation" String="Healthcare Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareRadius" String="Healthcare Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_animalCount" String="Animal Count" />
+    <Translation ID="CUSTOMIZE-IT-m_collectRadius" String="Garbage Collection Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityProduction" String="Electricity Production" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageCapacity" String="Garbage Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageConsumption" String="Garbage Consumption" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageTruckCount" String="Garbage Truck Count" />
+    <Translation ID="CUSTOMIZE-IT-m_materialProduction" String="Material Production" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceRadius" String="Maintenance Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceTruckCount" String="Maintenance Truck Count" />
+    <Translation ID="CUSTOMIZE-IT-m_monumentLevel" String="Monument Level" />
+    <Translation ID="CUSTOMIZE-IT-m_attractivenessAccumulation" String="Attractiveness Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_animalArea" String="Animal Area" />
+    <Translation ID="CUSTOMIZE-IT-m_landValueAccumulation" String="Land Value Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_jailCapacity" String="Jail Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_policeCarCount" String="Police Car Count" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentAccumulation" String="Police Department Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentRadius" String="Police Department Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_sentenceWeeks" String="Sentence Weeks" />
+    <Translation ID="CUSTOMIZE-IT-m_batteryFactor" String="Battery Factor" />
+    <Translation ID="CUSTOMIZE-IT-m_transmitterPower" String="Signal Strength" />
+    <Translation ID="CUSTOMIZE-IT-m_capacity" String="Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_disasterCoverageAccumulation" String="Disaster Coverage Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileAmount" String="Electricity Stockpile Size" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileRate" String="Electricity Stockpile Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationBusCount" String="Evacuation Bus Count" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationRange" String="Evacuation Range" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsConsumptionRate" String="Goods Consumption Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsStockpileAmount" String="Goods Stockpile Size" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileAmount" String="Water Stockpile Size" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileRate" String="Water Stockpile Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_snowCapacity" String="Snow Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_snowConsumption" String="Snow Consumption" />
+    <Translation ID="CUSTOMIZE-IT-m_snowTruckCount" String="Snowplow Count" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportAccumulation" String="Public Transport Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportRadius" String="Public Transport Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_residentCapacity" String="Resident Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor0" String="Tourist Factor 1" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Tourist Factor 2" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Tourist Factor 3" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Max Vehicle Count" />
+    <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Cleaning Rate" />
+    <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Max Water Distance" />
+    <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Outlet Pollution" />
+    <Translation ID="CUSTOMIZE-IT-m_pumpingVehicles" String="Pumping Vehicles" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageOutlet" String="Sewage Outlet" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageStorage" String="Sewage Storage" />
+    <Translation ID="CUSTOMIZE-IT-m_useGroundWater" String="Use Ground Water" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleRadius" String="Vehicle Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Water Intake" />
+    <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Water Outlet" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Storage" />
+  </Translations>
+</Language>

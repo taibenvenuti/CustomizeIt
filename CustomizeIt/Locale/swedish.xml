@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="sv" ReadableName="Svenska" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="CUSTOMIZE-IT-MODDESCRIPTION" String="Ändrar värden för byggnader t.ex. skräpproduktion, elproduktion och mycket mer!" />
+    <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="Kostnad" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="Underhåll" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="Elförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_waterConsumption" String="Vattenförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageAccumulation" String="Avfall" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageAccumulation" String="Sopackumulering" />
+    <Translation ID="CUSTOMIZE-IT-m_fireHazard" String="Brandrisk" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTolerance" String="Brandtålighet" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount0" String="Låginkomst Turister" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount1" String="Medelinkomst Turister" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="Höginkomst Tourists" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentAccumulation" String="Underhållingsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentRadius" String="Underhållings Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount0" String="Outbildade Arbetare" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount1" String="Utbildade Arbetare" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount2" String="Väl Utbildade Arbetare" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount3" String="Högt Utbildade Arbetare" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseAccumulation" String="Ljudackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseRadius" String="Ljud Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportAccumulation" String="Lastbilsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportRadius" String=" Lastbils Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_hearseCount" String="Likbilar" />
+    <Translation ID="CUSTOMIZE-IT-m_corpseCapacity" String="Kapacitet" />
+    <Translation ID="CUSTOMIZE-IT-m_burialRate" String="Begravingstakt" />
+    <Translation ID="CUSTOMIZE-IT-m_graveCount" String="Gravar" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareAccumulation" String="Dödvårdsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareRadius" String="Dödsvårds Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_helicopterCount" String="Helikopter" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleCount" String="Fordon" />
+    <Translation ID="CUSTOMIZE-IT-m_detectionRange" String="Observerings Range" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentAccumulation" String="Brandstationsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentRadius" String="Brandstations Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTruckCount" String="Brandbilar" />
+    <Translation ID="CUSTOMIZE-IT-m_firewatchRadius" String="Brandvakts Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_educationAccumulation" String="Utbildningsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_educationRadius" String="Utbildings Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_studentCount" String="Studenter" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceCapacity" String="Resurskapacitet" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceConsumption" String="Resursförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_heatingProduction" String="Värmeproduktion" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionAccumulation" String="Föroreningsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionRadius" String="Förorenings Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_ambulanceCount" String="Ambulanser" />
+    <Translation ID="CUSTOMIZE-IT-m_patientCapacity" String="Patienter" />
+    <Translation ID="CUSTOMIZE-IT-m_curingRate" String="Härdningshastighet" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareAccumulation" String="Sjukvårdsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareRadius" String="Sjukvårds Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_animalCount" String="Djur" />
+    <Translation ID="CUSTOMIZE-IT-m_collectRadius" String="Skräpinhämtning Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityProduction" String="Elproduktion" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageCapacity" String="Skräpkapasitet" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageConsumption" String="Skräpförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageTruckCount" String="Skräpbilar" />
+    <Translation ID="CUSTOMIZE-IT-m_materialProduction" String="Materialproduktion" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceRadius" String="Underhålls Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceTruckCount" String="Underhållsfordon" />
+    <Translation ID="CUSTOMIZE-IT-m_monumentLevel" String="Monument Nivå" />
+    <Translation ID="CUSTOMIZE-IT-m_attractivenessAccumulation" String="Attraktivitetsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_animalArea" String="Djurarea" />
+    <Translation ID="CUSTOMIZE-IT-m_landValueAccumulation" String="Landvärdesackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_jailCapacity" String="Fängelsekapaitet" />
+    <Translation ID="CUSTOMIZE-IT-m_policeCarCount" String="Polisbilar" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentAccumulation" String="Polisackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentRadius" String="Polis Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_sentenceWeeks" String="Fängelststraff Weeks" />
+    <Translation ID="CUSTOMIZE-IT-m_batteryFactor" String="Batterifaktor" />
+    <Translation ID="CUSTOMIZE-IT-m_transmitterPower" String="Signalstyrka" />
+    <Translation ID="CUSTOMIZE-IT-m_capacity" String="Kapasitet" />
+    <Translation ID="CUSTOMIZE-IT-m_disasterCoverageAccumulation" String="Katastrofsackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileAmount" String="Elöverskott" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileRate" String="Elförbruking" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationBusCount" String="Katastrofbussar" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationRange" String="Katastrofräddnings Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsConsumptionRate" String="Varoförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsStockpileAmount" String="Varoöverskott" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileAmount" String="Vattenöverskott" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileRate" String="Vateförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_snowCapacity" String="Snökapasitet" />
+    <Translation ID="CUSTOMIZE-IT-m_snowConsumption" String="Snöförbrukning" />
+    <Translation ID="CUSTOMIZE-IT-m_snowTruckCount" String="Snöplogar" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportAccumulation" String="Kollektivtrafiksackulumering" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportRadius" String="Kollektivtrafiks Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_residentCapacity" String="Invånare" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor0" String="Turist Faktor 1" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Turist Faktor 2" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Turist Faktor 3" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Max Fordon" />
+    <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Städfart" />
+    <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Max Distans från Vatten" />
+    <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Förorening" />
+    <Translation ID="CUSTOMIZE-IT-m_pumpingVehicles" String="Pumpfordon" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageOutlet" String="Avlopp" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageStorage" String="Avloppsförvaring" />
+    <Translation ID="CUSTOMIZE-IT-m_useGroundWater" String="Använd Grundvatten" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleRadius" String="Fordons Radius" />
+    <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Vattenintag" />
+    <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Vattenutlopp" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Vattenöverskott" />
+  </Translations>
+</Language>
