@@ -14,13 +14,6 @@ namespace CustomizeIt.GUI
         {
             base.Start();
             Instance = this;
-            isVisible = false;
-            isInteractive = true;
-            name = "CustomizeItPanelWrapper";
-            padding = new RectOffset(10, 10, 4, 4);
-            relativePosition = new Vector3(10, 60);
-            backgroundSprite = "MenuPanel";
-            zOrder = 0;
             SetupControls();
         }
         public override void Update()
@@ -41,6 +34,12 @@ namespace CustomizeIt.GUI
         }
         private void SetupControls()
         {
+            isVisible = false;
+            isInteractive = true;
+            name = "CustomizeItPanelWrapper";
+            padding = new RectOffset(10, 10, 4, 4);
+            relativePosition = new Vector3(10, 60);
+            backgroundSprite = "MenuPanel";
             titleBar = AddUIComponent<UITitleBar>();
             customizePanel = AddUIComponent<UICustomizePanel>();
         }

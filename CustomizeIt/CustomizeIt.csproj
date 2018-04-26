@@ -46,15 +46,15 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\Assembly-CSharp.dll</HintPath>
-      <Private>true</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ColossalManaged">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\ColossalManaged.dll</HintPath>
-      <Private>true</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ICities">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\ICities.dll</HintPath>
-      <Private>true</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PrefabHook">
       <HintPath>D:\Steam\steamapps\workshop\content\255710\530771650\PrefabHook.dll</HintPath>
@@ -62,7 +62,7 @@
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\UnityEngine.dll</HintPath>
-      <Private>true</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

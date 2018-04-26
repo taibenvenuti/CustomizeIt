@@ -2,7 +2,6 @@
 using ColossalFramework.UI;
 using ICities;
 using PrefabHook;
-using UnityEngine;
 
 namespace CustomizeIt
 {
@@ -14,7 +13,7 @@ namespace CustomizeIt
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
-            if (!IsHooked()) return;
+            if (!IsHooked() || loading.currentMode != AppMode.Game) return;
             UserMod.Settings = CustomizeItSettings.Load();            
             BuildingInfoHook.OnPostInitialization += OnPostBuildingInit;
             BuildingInfoHook.Deploy();
@@ -23,6 +22,7 @@ namespace CustomizeIt
         public override void OnLevelLoaded(LoadMode mode)
         {
             base.OnLevelLoaded(mode);
+            if (mode == LoadMode.NewAsset || mode == LoadMode.LoadAsset || mode == LoadMode.NewMap || mode == LoadMode.LoadMap || mode == LoadMode.NewTheme || mode == LoadMode.LoadTheme) return;
             if (!IsHooked())
             {
                 UIView.library.ShowModal<ExceptionPanel>("ExceptionPanel").SetMessage(

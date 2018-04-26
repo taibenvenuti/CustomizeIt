@@ -16,9 +16,8 @@ namespace CustomizeIt
             var customFields = properties.GetType().GetFields();
             var fields = new Dictionary<string, FieldInfo>();
             foreach (var customField in customFields)
-            {
                 fields.Add(customField.Name, customField);
-            }
+
             foreach (var buildingField in buildingFields)
             {
                 try
