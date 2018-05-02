@@ -46,7 +46,7 @@ namespace CustomizeIt
 
         public static CustomizableProperties ResetProperties(this BuildingInfo building)
         {
-            if (CustomizeIt.OriginalBuildingData.TryGetValue(building.name, out CustomizableProperties properties))
+            if (CustomizeIt.instance.OriginalBuildingData.TryGetValue(building.name, out CustomizableProperties properties))
                 return properties;
             return null;
         }        

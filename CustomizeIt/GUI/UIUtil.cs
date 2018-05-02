@@ -104,6 +104,7 @@ namespace CustomizeIt.GUI
                 ["m_touristFactor1"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_touristFactor1"),
                 ["m_touristFactor2"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_touristFactor2"),
                 ["m_maxVehicleCount"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_maxVehicleCount"),
+                ["m_maxVehicleCount2"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_maxVehicleCount2"),
                 ["m_cleaningRate"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_cleaningRate"),
                 ["m_maxWaterDistance"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_maxWaterDistance"),
                 ["m_outletPollution"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_outletPollution"),

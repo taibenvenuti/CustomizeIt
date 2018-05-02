@@ -89,6 +89,7 @@
     <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Toerist Factor 2" />
     <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Toerist Factor 3" />
     <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Maximaal Aantal Voertuigen" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount2" String="Maximaal Aantal Voertuigen 2" />
     <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Schoonmaak Ratio" />
     <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Maximale Waterafstand" />
     <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Afvoer Vervuiling" />
@@ -101,5 +102,9 @@
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Wateruitlaat" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Opslag" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reset" />
+    <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Alles Resetten" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Deze optie is alleen beschikbaar in het hoofdmenu!" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Deze optie is alleen beschikbaar in het spel!" />
+    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Bewaar opties per opslagbestand" />
   </Translations>
 </Language>

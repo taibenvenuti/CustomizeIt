@@ -94,6 +94,7 @@ namespace CustomizeIt
         public int m_touristFactor1;
         public int m_touristFactor2;
         public int m_maxVehicleCount;
+        public int m_maxVehicleCount2;
         public int m_cleaningRate;
         public float m_maxWaterDistance;
         public int m_outletPollution;

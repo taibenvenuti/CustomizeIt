@@ -89,6 +89,7 @@
     <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Turist Faktor 2" />
     <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Turist Faktor 3" />
     <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Max Fordon" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount2" String="Max Fordon 2" />
     <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Städfart" />
     <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Max Distans från Vatten" />
     <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Förorening" />
@@ -101,5 +102,9 @@
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Vattenutlopp" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Vattenöverskott" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Återställ" />
+    <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Återställ allt" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Det här alternativet är endast tillgängligt i huvudmenyn!" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Det här alternativet är bara tillgängligt inne i spelet!" />
+    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Spara alternativen per sparfil" />
   </Translations>
 </Language>

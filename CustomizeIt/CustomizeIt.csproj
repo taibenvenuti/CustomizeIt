@@ -79,6 +79,7 @@
     <Compile Include="GUI\UITitleBar.cs" />
     <Compile Include="GUI\UIUtil.cs" />
     <Compile Include="Loading.cs" />
+    <Compile Include="Serialization.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TranslationFramework\Language.cs" />
     <Compile Include="TranslationFramework\TranslatableAttribute.cs" />
