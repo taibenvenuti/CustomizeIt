@@ -56,13 +56,6 @@ namespace CustomizeIt
             {
                 CustomBuildingDataList = binaryFormatter.Deserialize(memoryStream) as List<CustomizablePropertiesEntry>;
             }
-            SimulationManager.instance.AddAction(() =>
-            {
-                for (uint i = 0; i < PrefabCollection<BuildingInfo>.LoadedCount(); i++)
-                {
-                    Loading.LoadCustomData(PrefabCollection<BuildingInfo>.GetLoaded(i));
-                }
-            });
         }
     }
 }

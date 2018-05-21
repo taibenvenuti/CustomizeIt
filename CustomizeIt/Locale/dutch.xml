@@ -101,10 +101,13 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Water Inname" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Wateruitlaat" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Opslag" />
+    <Translation ID="CUSTOMIZE-IT-m_visitors" String="Bezoekers" />
+    <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Productie Capaciteit" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reset" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Alles Resetten" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Deze optie is alleen beschikbaar in het hoofdmenu!" />
     <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Deze optie is alleen beschikbaar in het spel!" />
-    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Bewaar opties per opslagbestand" />
+    <Translation ID="CUSTOMIZE-IT-SAVE-PER-CITY" String="Bewaar opties per opslagbestand" />
+    <Translation ID="CUSTOMIZE-IT-USE-RPC-VALUES" String="Gebruik standaard waardes van 'Realistic Population and Consumption Mod'" />
   </Translations>
 </Language>

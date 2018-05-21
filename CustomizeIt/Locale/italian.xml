@@ -12,7 +12,7 @@
     <Translation ID="CUSTOMIZE-IT-m_fireTolerance" String="Tolleranza al fuoco" />
     <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount0" String="Turisti di classe bassa" />
     <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount1" String="Turisti di classe media" />
-    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="Turisti di classe Alta" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="Turisti di classe alta" />
     <Translation ID="CUSTOMIZE-IT-m_entertainmentAccumulation" String="Accumulo d'intrattenimento" />
     <Translation ID="CUSTOMIZE-IT-m_entertainmentRadius" String="Raggio d'intrattenimento" />
     <Translation ID="CUSTOMIZE-IT-m_workPlaceCount0" String="Lavoratori non istruiti" />
@@ -101,10 +101,13 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Entrata d'acqua" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Uscita d'acqua" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Immagazzinamento d'acqua" />
+    <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visitatori" />
+    <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Capacità di produzione" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Ripristina" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Ripristina Tutti" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Questa opzione è disponibile solo nel menu principale!" />
     <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Questa opzione è disponibile solo all'interno del gioco!" />
-    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Salva le impostazioni nel file di salvataggio" />
+    <Translation ID="CUSTOMIZE-IT-SAVE-PER-CITY" String="Salva le impostazioni nel file di salvataggio" />
+    <Translation ID="CUSTOMIZE-IT-USE-RPC-VALUES" String="Usa i valori base di 'Realistic Population and Consumption Mod'" />
   </Translations>
 </Language>

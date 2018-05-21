@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using CustomizeIt.GUI;
+using System.Threading;
 
 namespace CustomizeIt
 {
@@ -11,30 +12,60 @@ namespace CustomizeIt
     {
         internal Dictionary<string, CustomizableProperties> CustomBuildingData = new Dictionary<string, CustomizableProperties>();
         internal Dictionary<string, CustomizableProperties> OriginalBuildingData = new Dictionary<string, CustomizableProperties>();
+        private List<string> ricoBuildings;
+        internal List<string> RICOBuildings
+        {
+            get
+            {
+                if(ricoBuildings == null)
+                {
+                    ricoBuildings = new List<string>();
+                }
+                return ricoBuildings;
+            }
+        }
         private bool initialized;
-        private bool inizializedButton;
+        private bool initializedButtons;
         internal BuildingInfo CurrentBuilding;
-        internal CityServiceWorldInfoPanel ServiceBuildingInfoPanel;
-        private UIButton customizeButton;
+        internal CityServiceWorldInfoPanel CityServiceWorldInfoPanel;
+        internal ZonedBuildingWorldInfoPanel ZonedBuildingWorldInfoPanel;
+        internal ShelterWorldInfoPanel ShelterWorldInfoPanel;
+        private UIButton serviceButton;
+        private UIButton zonedButton;
+        private UIButton shelterButton;
         internal UIPanelWrapper CustomizePanel;
         internal UICheckBox SavePerCityCheckBox;
-        internal UIButton ResetAllButton;
-        internal string CheckboxText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-CHECKBOX");
+        internal UIButton ResetAllButton; 
+        internal UICheckBox UseRPCValuesCheckBox;
+        internal string SavePerCityText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-SAVE-PER-CITY");
         internal string ButtonText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-RESET-ALL");
         internal string ButtonTooltip => ResetAllButton != null && ResetAllButton.isEnabled ? null : UserMod.Translation.GetTranslation("CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP");
         internal string CheckBoxTooltip => SavePerCityCheckBox != null && SavePerCityCheckBox.isEnabled ? null : UserMod.Translation.GetTranslation("CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP");
+        internal string UseRPCValuesText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-USE-RPC-VALUES");
+        internal string ConvertRICOText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-CONVERT-RICO");
 
-        public void Initialize()
+        internal void Initialize()
         {
             if (initialized) return;
-            AddPanelButton();
+            ToggleOptionPanelControls(true);
+            AddPanelButtons();
             initialized = true;
         }
 
-        public void Release()
+        internal void Release()
         {
             initialized = false;
-            inizializedButton = false;
+            initializedButtons = false;
+        }
+
+        internal void Customize(BuildingInfo building)
+        {
+            if (building == null || building.m_buildingAI == null || (!building.m_buildingAI.GetType().IsSubclassOf(typeof(PlayerBuildingAI)) && !building.m_buildingAI.GetType().IsSubclassOf(typeof(PrivateBuildingAI)))) return;
+            if (!OriginalBuildingData.TryGetValue(building.name, out CustomizableProperties originalProperties))
+                OriginalBuildingData.Add(building.name, building.GetCustomizableProperties());
+            else OriginalBuildingData[building.name] = building.GetCustomizableProperties();
+            if (CustomBuildingData.TryGetValue(building.name, out CustomizableProperties customProperties))
+                building.LoadCustomProperties(customProperties);
         }
 
         public void SaveBuilding(BuildingInfo building)
@@ -51,21 +82,34 @@ namespace CustomizeIt
             var properties = building.ResetProperties();
             if (CustomBuildingData.TryGetValue(building.name, out CustomizableProperties customProperties))
                 CustomBuildingData.Remove(building.name);
-            building.LoadCustomProperties(properties);
+            if(properties != null) building.LoadCustomProperties(properties);
             if (!UserMod.Settings.SavePerCity) UserMod.Settings.Save();
         }
 
-        private void AddPanelButton()
+        private void AddPanelButtons()
         {
-            if (!inizializedButton)
+            if (!initializedButtons)
             {
-                ServiceBuildingInfoPanel = GameObject.Find("(Library) CityServiceWorldInfoPanel").GetComponent<CityServiceWorldInfoPanel>();
+                CityServiceWorldInfoPanel = GameObject.Find("(Library) CityServiceWorldInfoPanel").GetComponent<CityServiceWorldInfoPanel>();
 
-                if (ServiceBuildingInfoPanel != null)
+                if (CityServiceWorldInfoPanel != null)
                 {
-                    AddBuildingPanelControls(ServiceBuildingInfoPanel, out customizeButton, new Vector3(-7f, 43f, 0f));  
-                    inizializedButton = true;
+                    AddBuildingPanelControls(CityServiceWorldInfoPanel, out serviceButton, new Vector3(-7f, 43f, 0f));
+                    serviceButton.name = "ServiceButton";
                 }
+                ZonedBuildingWorldInfoPanel = GameObject.Find("(Library) ZonedBuildingWorldInfoPanel").GetComponent<ZonedBuildingWorldInfoPanel>();
+                if (ZonedBuildingWorldInfoPanel != null)
+                {
+                    AddBuildingPanelControls(ZonedBuildingWorldInfoPanel, out zonedButton, new Vector3(-7f, 43f, 0f));
+                    zonedButton.name = "ZonedButton";
+                }
+                ShelterWorldInfoPanel = GameObject.Find("(Library) ShelterWorldInfoPanel").GetComponent<ShelterWorldInfoPanel>();
+                if (ShelterWorldInfoPanel != null)
+                {
+                    AddBuildingPanelControls(ShelterWorldInfoPanel, out shelterButton, new Vector3(-7f, 43f, 0f));
+                    shelterButton.name = "ShelterButton";
+                }
+                initializedButtons = true;
             }
         }
 
@@ -73,9 +117,13 @@ namespace CustomizeIt
         {
             button = UIUtil.CreateToggleButton(infoPanel.component, customizeButtonOffset, UIAlignAnchor.TopRight, delegate (UIComponent component, UIMouseEventParameter param)
             {
-                InstanceID instanceID = (InstanceID)infoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(infoPanel);
+                InstanceID instanceID = CityServiceWorldInfoPanel.component.isVisible ? 
+                (InstanceID)CityServiceWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(CityServiceWorldInfoPanel) :
+                ZonedBuildingWorldInfoPanel.component.isVisible ?
+                (InstanceID)ZonedBuildingWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ZonedBuildingWorldInfoPanel) :
+                (InstanceID)ShelterWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ShelterWorldInfoPanel);
                 var building = BuildingManager.instance.m_buildings.m_buffer[instanceID.Building].Info;
-                if (CustomizePanel == null || building != CurrentBuilding)
+                if ((CustomizePanel == null || building != CurrentBuilding) && building.m_buildingAI.GetType() != typeof(DummyBuildingAI))
                     CustomizePanel = building.GenerateCustomizationPanel();
                 else
                 {
@@ -83,17 +131,21 @@ namespace CustomizeIt
                     UIUtil.DestroyDeeply(CustomizePanel);
                 }
                 if(component.hasFocus) component.Unfocus();
-            });
+            });            
         }      
         
         internal void ToggleOptionPanelControls(bool inGame)
         {
             SavePerCityCheckBox.isEnabled = !inGame;
+            UseRPCValuesCheckBox.isEnabled = !inGame;
             ResetAllButton.isEnabled = inGame;
             ResetAllButton.tooltip = ButtonTooltip;
             SavePerCityCheckBox.tooltip = CheckBoxTooltip;
+            UseRPCValuesCheckBox.tooltip = CheckBoxTooltip;
             SavePerCityCheckBox.Find<UISprite>("Unchecked").spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBase";
-            ((UISprite)SavePerCityCheckBox.checkedBoxObject).spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBaseFocused";
+            ((UISprite)UseRPCValuesCheckBox.checkedBoxObject).spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBaseFocused";
+            UseRPCValuesCheckBox.Find<UISprite>("Unchecked").spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBase";
+            ((UISprite)UseRPCValuesCheckBox.checkedBoxObject).spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBaseFocused";
         }
     }
 }

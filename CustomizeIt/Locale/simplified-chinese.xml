@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language UniqueName="zh-cn  " ReadableName="简体中文" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="建设成本" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="维护成本" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="用电量" />
+    <Translation ID="CUSTOMIZE-IT-m_waterConsumption" String="耗水量" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageAccumulation" String="污水产生量" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageAccumulation" String="垃圾产生量" />
+    <Translation ID="CUSTOMIZE-IT-m_fireHazard" String="火灾发生概率" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTolerance" String="火灾时耐火性" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount0" String="低收入游客" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount1" String="中等收入游客" />
+    <Translation ID="CUSTOMIZE-IT-m_visitPlaceCount2" String="高收入游客" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentAccumulation" String="娱乐设施影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_entertainmentRadius" String="娱乐设施影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount0" String="未受过教育的工人" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount1" String="受过初等教育的工人" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount2" String="受过中等教育的工人" />
+    <Translation ID="CUSTOMIZE-IT-m_workPlaceCount3" String="受过高等教育的工人" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseAccumulation" String="噪音等级" />
+    <Translation ID="CUSTOMIZE-IT-m_noiseRadius" String="噪音影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportAccumulation" String="货运站影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_cargoTransportRadius" String="货运站影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_hearseCount" String="灵车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_corpseCapacity" String="可安放的遗体数量" />
+    <Translation ID="CUSTOMIZE-IT-m_burialRate" String="遗体处理速度" />
+    <Translation ID="CUSTOMIZE-IT-m_graveCount" String="坟墓数量" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareAccumulation" String="殡葬服务影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_deathCareRadius" String="殡葬服务影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_helicopterCount" String="直升机数量" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleCount" String="车辆数量" />
+    <Translation ID="CUSTOMIZE-IT-m_detectionRange" String="探测距离" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentAccumulation" String="消防部门影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_fireDepartmentRadius" String="消防部门影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_fireTruckCount" String="消防车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_firewatchRadius" String="火警瞭望塔瞭望范围" />
+    <Translation ID="CUSTOMIZE-IT-m_educationAccumulation" String="教育设施影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_educationRadius" String="教育设施影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_studentCount" String="学生数量" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceCapacity" String="资源容量" />
+    <Translation ID="CUSTOMIZE-IT-m_resourceConsumption" String="资源消耗速度" />
+    <Translation ID="CUSTOMIZE-IT-m_heatingProduction" String="热量输出" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionAccumulation" String="污染值" />
+    <Translation ID="CUSTOMIZE-IT-m_pollutionRadius" String="污染影响半径" />
+    <Translation ID="CUSTOMIZE-IT-m_ambulanceCount" String="救护车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_patientCapacity" String="患者容量" />
+    <Translation ID="CUSTOMIZE-IT-m_curingRate" String="医疗速度" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareAccumulation" String="医疗保健影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_healthCareRadius" String="医疗保健影响范围" />
+    <Translation ID="CUSTOMIZE-IT-m_animalCount" String="动物数量" />
+    <Translation ID="CUSTOMIZE-IT-m_collectRadius" String="收集半径" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityProduction" String="电力生产" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageCapacity" String="垃圾容量" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageConsumption" String="垃圾处理速度" />
+    <Translation ID="CUSTOMIZE-IT-m_garbageTruckCount" String="垃圾车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_materialProduction" String="回收站垃圾回收产出量" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceRadius" String="养护半径" />
+    <Translation ID="CUSTOMIZE-IT-m_maintenanceTruckCount" String="养护车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_monumentLevel" String="建筑级别" />
+    <Translation ID="CUSTOMIZE-IT-m_attractivenessAccumulation" String="游客吸引力度" />
+    <Translation ID="CUSTOMIZE-IT-m_animalArea" String="none" />
+    <Translation ID="CUSTOMIZE-IT-m_landValueAccumulation" String="地价影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_jailCapacity" String="监狱容量" />
+    <Translation ID="CUSTOMIZE-IT-m_policeCarCount" String="警车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentAccumulation" String="警察服务影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_policeDepartmentRadius" String="警察服务影响范围" />
+    <Translation ID="CUSTOMIZE-IT-m_sentenceWeeks" String="关押期限" />
+    <Translation ID="CUSTOMIZE-IT-m_batteryFactor" String="夜间电池发电倍率" />
+    <Translation ID="CUSTOMIZE-IT-m_transmitterPower" String="信号强度" />
+    <Translation ID="CUSTOMIZE-IT-m_capacity" String="容量" />
+    <Translation ID="CUSTOMIZE-IT-m_disasterCoverageAccumulation" String="灾害防御影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileAmount" String="电力储备量" />
+    <Translation ID="CUSTOMIZE-IT-m_electricityStockpileRate" String="电力储备效率" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationBusCount" String="疏散车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_evacuationRange" String="疏散范围" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsConsumptionRate" String="货物消耗速度" />
+    <Translation ID="CUSTOMIZE-IT-m_goodsStockpileAmount" String="货物储备量" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileAmount" String="水储备量" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStockpileRate" String="水储备效率" />
+    <Translation ID="CUSTOMIZE-IT-m_snowCapacity" String="积雪量" />
+    <Translation ID="CUSTOMIZE-IT-m_snowConsumption" String="溶雪速度" />
+    <Translation ID="CUSTOMIZE-IT-m_snowTruckCount" String="除雪车数量" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportAccumulation" String="公共交通影响力度" />
+    <Translation ID="CUSTOMIZE-IT-m_publicTransportRadius" String="公共交通影响范围" />
+    <Translation ID="CUSTOMIZE-IT-m_residentCapacity" String="居民收容能力" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor0" String="低收入游客吸引力" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="中收入游客吸引力" />
+    <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="高收入游客吸引力" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="最大车辆数量" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount2" String="最大车辆数量2（缆车请勿修改）" />
+    <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="清理工作效率" />
+    <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="距水面最大高度" />
+    <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="水污染" />
+    <Translation ID="CUSTOMIZE-IT-m_pumpingVehicles" String="泵车" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageOutlet" String="排污量" />
+    <Translation ID="CUSTOMIZE-IT-m_sewageStorage" String="污水储量" />
+    <Translation ID="CUSTOMIZE-IT-m_useGroundWater" String="使用地下水" />
+    <Translation ID="CUSTOMIZE-IT-m_vehicleRadius" String="车辆范围" />
+    <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="抽水量" />
+    <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="排水量" />
+    <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="水储量" />
+    <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visitors" />
+    <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Production Capacity" />
+    <Translation ID="CUSTOMIZE-IT-RESET" String="重置" />
+    <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="全部重置" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="This option is only available in the main menu!" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="This option is only available inside the game!" />
+    <Translation ID="CUSTOMIZE-IT-SAVE-PER-CITY" String="Save changes per save-game" />
+    <Translation ID="CUSTOMIZE-IT-USE-RPC-VALUES" String="Use Realistic Population and Consumption Mod default values" />
+  </Translations>
+</Language>

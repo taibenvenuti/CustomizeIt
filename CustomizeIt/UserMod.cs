@@ -10,20 +10,7 @@ namespace CustomizeIt
         public static Translation Translation = new Translation();
         public static string name = "Customize It!";
         public string Name => name;
-        public string Description
-        {
-            get
-            {
-                if (!Loading.IsHooked())
-                {
-                    UIView.library.ShowModal<ExceptionPanel>("ExceptionPanel").SetMessage(
-                        "Missing dependency",
-                        $"{name} requires the 'Prefab Hook' mod to work properly. Please subscribe to the mod and restart the game!",
-                        false);
-                }
-                return Translation.GetTranslation("CUSTOMIZE-IT-MODDESCRIPTION");
-            }
-        }
+        public string Description => Translation.GetTranslation("CUSTOMIZE-IT-MODDESCRIPTION");
         internal static CustomizeItSettings settings;
         public static CustomizeItSettings Settings
         {
@@ -50,12 +37,18 @@ namespace CustomizeIt
         public void OnSettingsUI(UIHelperBase helper)
         {
             helper.AddSpace(10);
-            Instance.SavePerCityCheckBox = (UICheckBox)helper.AddCheckbox(Instance.CheckboxText, Settings.SavePerCity, (b) => 
+            Instance.SavePerCityCheckBox = (UICheckBox)helper.AddCheckbox(Instance.SavePerCityText, Settings.SavePerCity, (b) => 
             {
                 Settings.SavePerCity = b;
                 Settings.Save();
             });
             Instance.SavePerCityCheckBox.parent.Find<UILabel>("Label").disabledTextColor = Color.gray;
+            helper.AddSpace(10);
+            Instance.UseRPCValuesCheckBox = (UICheckBox)helper.AddCheckbox(Instance.UseRPCValuesText, Settings.UseRPCValues, (b) =>
+            {
+                Settings.UseRPCValues = b;
+                Settings.Save();
+            });
             helper.AddSpace(10);
             Instance.ResetAllButton = (UIButton)helper.AddButton(Instance.ButtonText, () => 
             {

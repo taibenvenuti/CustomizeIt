@@ -28,6 +28,7 @@
     mkdir "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)"\Locale
     xcopy /y "$(ProjectDir)\Locale" "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Locale" /s /e
     </PostBuildEvent>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,8 +43,12 @@
     mkdir "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)"\Locale
     xcopy /y "$(ProjectDir)\Locale" "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Locale" /s /e
     </PostBuildEvent>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\Modding\ReferenceStore\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -55,6 +60,9 @@
     <Reference Include="ICities">
       <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\ICities.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="PloppableRICO">
+      <HintPath>..\..\..\..\..\Modding\ReferenceStore\PloppableRICO.dll</HintPath>
     </Reference>
     <Reference Include="PrefabHook">
       <HintPath>D:\Steam\steamapps\workshop\content\255710\530771650\PrefabHook.dll</HintPath>
@@ -70,6 +78,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\Commercial\CommercialConsumption.cs" />
+    <Compile Include="AI\Commercial\Commercial.cs" />
+    <Compile Include="AI\Commercial\CommercialPloppable.cs" />
+    <Compile Include="AI\Commercial\CommercialPollution.cs" />
+    <Compile Include="AI\Commercial\CommercialVisitplace.cs" />
+    <Compile Include="AI\Commercial\CommercialWorkplace.cs" />
+    <Compile Include="AI\Extractor\Extractor.cs" />
+    <Compile Include="AI\Extractor\ExtractorConsumption.cs" />
+    <Compile Include="AI\Extractor\ExtractorPloppable.cs" />
+    <Compile Include="AI\Extractor\ExtractorPollution.cs" />
+    <Compile Include="AI\Extractor\ExtractorProduction.cs" />
+    <Compile Include="AI\Extractor\ExtractorWorkplace.cs" />
+    <Compile Include="AI\ICustomAI.cs" />
+    <Compile Include="AI\Industrial\IndustrialPloppable.cs" />
+    <Compile Include="AI\Industrial\IndustrialPollution.cs" />
+    <Compile Include="AI\Industrial\Industrial.cs" />
+    <Compile Include="AI\Industrial\IndustrialConsumption.cs" />
+    <Compile Include="AI\Industrial\IndustrialProduction.cs" />
+    <Compile Include="AI\Industrial\IndustrialWorkplace.cs" />
+    <Compile Include="AI\Office\Office.cs" />
+    <Compile Include="AI\Office\OfficeConsumption.cs" />
+    <Compile Include="AI\Office\OfficePloppable.cs" />
+    <Compile Include="AI\Office\OfficeProduction.cs" />
+    <Compile Include="AI\Office\OfficeWorkplace.cs" />
+    <Compile Include="AI\Residential\ResidentialPloppable.cs" />
+    <Compile Include="AI\RPCData.cs" />
+    <Compile Include="AI\Residential\Residential.cs" />
+    <Compile Include="AI\Residential\ResidentialConsumption.cs" />
+    <Compile Include="AI\Residential\ResidentialHome.cs" />
+    <Compile Include="AI\Residential\ResidentialSimulation.cs" />
+    <Compile Include="AI\SharedAI.cs" />
     <Compile Include="CustomizableProperties.cs" />
     <Compile Include="CustomizeIt.cs" />
     <Compile Include="Entry.cs" />
@@ -79,6 +118,7 @@
     <Compile Include="GUI\UITitleBar.cs" />
     <Compile Include="GUI\UIUtil.cs" />
     <Compile Include="Loading.cs" />
+    <Compile Include="RICOHook.cs" />
     <Compile Include="Serialization.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TranslationFramework\Language.cs" />
@@ -87,6 +127,7 @@
     <Compile Include="TranslationFramework\TranslationUtil.cs" />
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -96,10 +137,13 @@
     </Content>
     <Content Include="Locale\french.xml" />
     <Content Include="Locale\italian.xml" />
+    <Content Include="Locale\japanse.xml" />
+    <Content Include="Locale\simplified-chinese.xml" />
     <Content Include="Locale\spanish.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Locale\swedish.xml" />
+    <Content Include="Locale\traditional-chinese.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

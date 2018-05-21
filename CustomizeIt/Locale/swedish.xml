@@ -101,10 +101,13 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Vattenintag" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Vattenutlopp" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Vattenöverskott" />
+    <Translation ID="CUSTOMIZE-IT-m_visitors" String="Besökare" />
+    <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Produktions Kapacitet" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Återställ" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Återställ allt" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Det här alternativet är endast tillgängligt i huvudmenyn!" />
     <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Det här alternativet är bara tillgängligt inne i spelet!" />
-    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Spara alternativen per sparfil" />
+    <Translation ID="CUSTOMIZE-IT-SAVE-PER-CITY" String="Spara alternativen per sparfil" />
+    <Translation ID="CUSTOMIZE-IT-USE-RPC-VALUES" String="Använd 'Realistic Population and Consumption Mod' standard värden." />
   </Translations>
 </Language>

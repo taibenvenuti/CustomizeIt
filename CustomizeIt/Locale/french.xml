@@ -101,10 +101,13 @@
     <Translation ID="CUSTOMIZE-IT-m_waterIntake" String="Prise d'eau" />
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Sortie d'eau" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Réserve d'eau" />
+    <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visiteurs" />
+    <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Capacité de production" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Réinit." />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Réinit. Tout" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Cette option est uniquement disponible dans le menu principal!" />
     <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="Cette option est uniquement disponible dans le jeu!" />
-    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Enregistrer les options par fichier de sauvegarde" />
+    <Translation ID="CUSTOMIZE-IT-SAVE-PER-CITY" String="Enregistrer les options par fichier de sauvegarde" />
+    <Translation ID="CUSTOMIZE-IT-USE-RPC-VALUES" String="Utilise des valeurs par défaut de 'Realistic Population and Consumption Mod'" />
   </Translations>
 </Language>

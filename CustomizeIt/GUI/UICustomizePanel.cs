@@ -63,8 +63,7 @@ namespace CustomizeIt.GUI
             AlignChildren();
             height = (Inputs.Count * (UIUtil.textFieldHeight + UIUtil.textFieldMargin)) + (UIUtil.textFieldMargin * 3);            
             UIPanelWrapper.Instance.height = height + UITitleBar.Instance.height;
-            var anchor = CustomizeIt.instance.ServiceBuildingInfoPanel.component;
-            UIPanelWrapper.Instance.relativePosition = new Vector3(UserMod.Settings.PanelX, UserMod.Settings.PanelY);//new Vector3((Screen.width/2) - (width/2), (Screen.height/2) - (height/2));
+            UIPanelWrapper.Instance.relativePosition = new Vector3(UserMod.Settings.PanelX, UserMod.Settings.PanelY);
             isVisible = UIPanelWrapper.Instance.isVisible = UITitleBar.Instance.isVisible = UITitleBar.Instance.dragHandle.isVisible = true;
         }
 

@@ -1,29 +1,37 @@
 ﻿using ColossalFramework.Plugins;
 using ColossalFramework.UI;
+using Harmony;
 using ICities;
 using PrefabHook;
 using System.Linq;
+using System.Reflection;
 
 namespace CustomizeIt
 {
     public class Loading : LoadingExtensionBase
     {
+        private AppMode appMode;
         private bool done;
         private CustomizeIt Instance => CustomizeIt.instance; 
 
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
+            appMode = loading.currentMode;
             if (!IsHooked() || loading.currentMode != AppMode.Game) return;
+            //if (Util.IsRICOActive())
+            //{
+            //    var harmony = HarmonyInstance.Create("com.tpb.customizeit");
+            //    harmony.PatchAll(Assembly.GetExecutingAssembly());
+            //}
             BuildingInfoHook.OnPostInitialization += OnPostBuildingInit;
             BuildingInfoHook.Deploy();
-        }
+        }        
 
         public override void OnLevelLoaded(LoadMode mode)
         {
             base.OnLevelLoaded(mode);
-            if (mode == LoadMode.NewAsset || mode == LoadMode.LoadAsset || mode == LoadMode.NewMap || mode == LoadMode.LoadMap || mode == LoadMode.NewTheme || mode == LoadMode.LoadTheme) return;
-            Instance.ToggleOptionPanelControls(true);
+            if (appMode != AppMode.Game) return;
             if (!IsHooked())
             {
                 UIView.library.ShowModal<ExceptionPanel>("ExceptionPanel").SetMessage(
@@ -57,20 +65,11 @@ namespace CustomizeIt
             if (!IsHooked()) return;
             BuildingInfoHook.OnPostInitialization -= OnPostBuildingInit;
             BuildingInfoHook.Revert();
-        }        
-        
-        public void OnPostBuildingInit(BuildingInfo building)
-        {
-            if (building == null || building.m_buildingAI == null || !(building.m_buildingAI.GetType().IsSubclassOf(typeof(PlayerBuildingAI)))) return;
-            if (!CustomizeIt.instance.OriginalBuildingData.TryGetValue(building.name, out CustomizableProperties originalProperties))
-                CustomizeIt.instance.OriginalBuildingData.Add(building.name, building.GetCustomizableProperties());
-            LoadCustomData(building);
         }
 
-        internal static void LoadCustomData(BuildingInfo building)
+        public void OnPostBuildingInit(BuildingInfo building)
         {
-            if (CustomizeIt.instance.CustomBuildingData.TryGetValue(building.name, out CustomizableProperties customProperties))
-                building.LoadCustomProperties(customProperties);
+            building.Convert();
         }
 
         public static bool IsHooked()

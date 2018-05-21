@@ -15,6 +15,7 @@ namespace CustomizeIt
         public float PanelX = 8f;
         public float PanelY = 65f;
         public bool SavePerCity = false;
+        public bool UseRPCValues = false;
         public CustomizeItSettings() { }
         public void OnPreSerialize() { }
         public void OnPostDeserialize() { }

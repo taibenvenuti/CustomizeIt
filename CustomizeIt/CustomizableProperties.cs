@@ -7,6 +7,10 @@ namespace CustomizeIt
     [Serializable]
     public class CustomizableProperties
     {
+        public int m_visitors;
+        public int m_homeCount;
+        public int m_incomeAccumulation;
+        public int m_productionCapacity;
         public int m_constructionCost;
         public int m_maintenanceCost;
         public int m_electricityConsumption;

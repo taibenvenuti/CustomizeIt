@@ -1,5 +1,7 @@
 ﻿using ColossalFramework.UI;
+using CustomizeIt.AI.Residential;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace CustomizeIt.GUI
@@ -17,6 +19,10 @@ namespace CustomizeIt.GUI
         {
             return new Dictionary<string, string>()
             {
+                ["m_visitors"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_visitors"),
+                ["m_productionCapacity"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_productionCapacity"),
+                ["m_homeCount"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_homeCount"),
+                ["m_incomeAccumulation"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_incomeAccumulation"),
                 ["m_constructionCost"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_constructionCost"),
                 ["m_maintenanceCost"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_maintenanceCost"),
                 ["m_electricityConsumption"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_electricityConsumption"),
@@ -261,6 +267,23 @@ namespace CustomizeIt.GUI
                     ((UITextField)component).text = "1";
                 }
                 type.GetField(component.name)?.SetValue(ai, result);
+                if ((component.name.ToLower().Contains("homecount") || component.name.ToLower().Contains("placecount") || component.name.ToLower().Contains("sewage") || component.name.ToLower().Contains("garbage")))
+                {
+                    bool isHomeOrWorkplace = component.name.ToLower().Contains("homecount") || component.name.ToLower().Contains("placecount");
+                    bool isSewage = component.name.ToLower().Contains("sewage");
+                    bool isGarbage = component.name.ToLower().Contains("garbage");
+                    SimulationManager.instance.AddAction(() => 
+                    {
+                        for (ushort i = 0; i < BuildingManager.instance.m_buildings.m_buffer.Length; i++)
+                        {
+                            var building = BuildingManager.instance.m_buildings.m_buffer[i];
+                            if (building.m_flags == 0 || building.Info == null || building.Info != CustomizeIt.instance.CurrentBuilding) continue;
+                            if(isHomeOrWorkplace) building.Info.m_buildingAI.BuildingUpgraded(i, ref BuildingManager.instance.m_buildings.m_buffer[i]);
+                            if (isSewage) BuildingManager.instance.m_buildings.m_buffer[i].m_sewageBuffer = 0;
+                            if (isGarbage) BuildingManager.instance.m_buildings.m_buffer[i].m_garbageBuffer = 0;
+                        }
+                    });
+                }
             }
         }
 
