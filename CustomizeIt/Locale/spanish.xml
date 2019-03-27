@@ -89,6 +89,7 @@
     <Translation ID="CUSTOMIZE-IT-m_touristFactor1" String="Factor de Turismo 2" />
     <Translation ID="CUSTOMIZE-IT-m_touristFactor2" String="Factor de Turismo 3" />
     <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount" String="Cantidad Máxima de Vehículos" />
+    <Translation ID="CUSTOMIZE-IT-m_maxVehicleCount2" String="Cantidad Máxima de Vehículos 2" />
     <Translation ID="CUSTOMIZE-IT-m_cleaningRate" String="Tasa de Purificación" />
     <Translation ID="CUSTOMIZE-IT-m_maxWaterDistance" String="Distancia Máxima del Agua" />
     <Translation ID="CUSTOMIZE-IT-m_outletPollution" String="Contaminación de la Salida de Agua" />
@@ -101,5 +102,9 @@
     <Translation ID="CUSTOMIZE-IT-m_waterOutlet" String="Salida de Agua" />
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Almacenamiento de Agua" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reiniciar" />
+    <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Reiniciar Todos" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="¡Esta opción solo está disponible en el menú principal!" />
+    <Translation ID="CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP" String="¡Esta opción solo está disponible dentro del juego!" />
+    <Translation ID="CUSTOMIZE-IT-CHECKBOX" String="Guarda los cambios de manera individual para cada ciudad" />
   </Translations>
 </Language>

@@ -12,17 +12,23 @@ namespace CustomizeIt
         [XmlIgnore]
         private static readonly string configurationPath = Path.Combine(DataLocation.localApplicationData, "CustomizeIt.xml");
         public List<CustomizablePropertiesEntry> Entries = new List<CustomizablePropertiesEntry>();
+        public float PanelX = 8f;
+        public float PanelY = 65f;
+        public bool SavePerCity = false;
         public CustomizeItSettings() { }
         public void OnPreSerialize() { }
         public void OnPostDeserialize() { }
 
         public void Save()
         {
-            Entries.Clear();
+            if (!UserMod.Settings.SavePerCity)
+            {
+                Entries.Clear();
 
-            foreach (var entry in CustomizeIt.CustomBuildingData)
-                if (entry.Value != null)
-                    Entries.Add(entry);
+                foreach (var entry in CustomizeIt.instance.CustomBuildingData)
+                    if (entry.Value != null)
+                        Entries.Add(entry);
+            }            
 
             var fileName = configurationPath;
             var config = UserMod.Settings;
@@ -45,12 +51,15 @@ namespace CustomizeIt
                 using (var reader = new StreamReader(fileName))
                 {
                     var config = serializer.Deserialize(reader) as CustomizeItSettings;
-                    var collection = CustomizeIt.CustomBuildingData;
-                    collection.Clear();
+                    if (!config.SavePerCity)
+                    {
+                        var collection = CustomizeIt.instance.CustomBuildingData;
+                        collection.Clear();
 
-                    foreach (var entry in config.Entries)
-                        if (entry != null)
-                            collection.Add(entry.Key, entry.Value);
+                        foreach (var entry in config.Entries)
+                            if (entry != null)
+                                collection.Add(entry.Key, entry.Value);
+                    }
                     return config;
                 }
             }

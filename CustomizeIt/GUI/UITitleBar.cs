@@ -31,6 +31,12 @@ namespace CustomizeIt.GUI
             dragHandle.height = height;
             dragHandle.relativePosition = Vector3.zero;
             dragHandle.target = parent;
+            dragHandle.eventMouseUp += (c, e) =>
+            {
+                UserMod.Settings.PanelX = parent.relativePosition.x;
+                UserMod.Settings.PanelY = parent.relativePosition.y;
+                UserMod.Settings.Save();
+            };
 
             titleLabel = AddUIComponent<UILabel>();
             titleLabel.text = CustomizeIt.instance.CurrentBuilding.GetUncheckedLocalizedTitle();

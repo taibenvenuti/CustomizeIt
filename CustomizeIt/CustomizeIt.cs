@@ -9,14 +9,20 @@ namespace CustomizeIt
 {
     public class CustomizeIt : Singleton<CustomizeIt>
     {
-        internal static Dictionary<string, CustomizableProperties> CustomBuildingData = new Dictionary<string, CustomizableProperties>();
-        internal static Dictionary<string, CustomizableProperties> OriginalBuildingData = new Dictionary<string, CustomizableProperties>();
+        internal Dictionary<string, CustomizableProperties> CustomBuildingData = new Dictionary<string, CustomizableProperties>();
+        internal Dictionary<string, CustomizableProperties> OriginalBuildingData = new Dictionary<string, CustomizableProperties>();
         private bool initialized;
         private bool inizializedButton;
         internal BuildingInfo CurrentBuilding;
         internal CityServiceWorldInfoPanel ServiceBuildingInfoPanel;
         private UIButton customizeButton;
         internal UIPanelWrapper CustomizePanel;
+        internal UICheckBox SavePerCityCheckBox;
+        internal UIButton ResetAllButton;
+        internal string CheckboxText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-CHECKBOX");
+        internal string ButtonText => UserMod.Translation.GetTranslation("CUSTOMIZE-IT-RESET-ALL");
+        internal string ButtonTooltip => ResetAllButton != null && ResetAllButton.isEnabled ? null : UserMod.Translation.GetTranslation("CUSTOMIZE-IT-OPTION-INGAME-TOOLTIP");
+        internal string CheckBoxTooltip => SavePerCityCheckBox != null && SavePerCityCheckBox.isEnabled ? null : UserMod.Translation.GetTranslation("CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP");
 
         public void Initialize()
         {
@@ -37,18 +43,16 @@ namespace CustomizeIt
                 CustomBuildingData.Add(building.name, new CustomizableProperties(building));
             else CustomBuildingData[building.name] = new CustomizableProperties(building);
 
-            UserMod.Settings.Save();
+            if(!UserMod.Settings.SavePerCity) UserMod.Settings.Save();
         }
 
         public void ResetBuilding(BuildingInfo building)
         {
             var properties = building.ResetProperties();
-            if (!CustomBuildingData.TryGetValue(building.name, out CustomizableProperties customProperties))
-                CustomBuildingData.Add(building.name, properties);
-            else CustomBuildingData[building.name] = properties;
-
+            if (CustomBuildingData.TryGetValue(building.name, out CustomizableProperties customProperties))
+                CustomBuildingData.Remove(building.name);
             building.LoadCustomProperties(properties);
-            UserMod.Settings.Save();
+            if (!UserMod.Settings.SavePerCity) UserMod.Settings.Save();
         }
 
         private void AddPanelButton()
@@ -80,6 +84,16 @@ namespace CustomizeIt
                 }
                 if(component.hasFocus) component.Unfocus();
             });
-        }        
+        }      
+        
+        internal void ToggleOptionPanelControls(bool inGame)
+        {
+            SavePerCityCheckBox.isEnabled = !inGame;
+            ResetAllButton.isEnabled = inGame;
+            ResetAllButton.tooltip = ButtonTooltip;
+            SavePerCityCheckBox.tooltip = CheckBoxTooltip;
+            SavePerCityCheckBox.Find<UISprite>("Unchecked").spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBase";
+            ((UISprite)SavePerCityCheckBox.checkedBoxObject).spriteName = inGame ? "ToggleBaseDisabled" : "ToggleBaseFocused";
+        }
     }
 }

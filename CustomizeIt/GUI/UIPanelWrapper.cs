@@ -38,7 +38,7 @@ namespace CustomizeIt.GUI
             isInteractive = true;
             name = "CustomizeItPanelWrapper";
             padding = new RectOffset(10, 10, 4, 4);
-            relativePosition = new Vector3(10, 60);
+            relativePosition = new Vector3(UserMod.Settings.PanelX, UserMod.Settings.PanelX);
             backgroundSprite = "MenuPanel";
             titleBar = AddUIComponent<UITitleBar>();
             customizePanel = AddUIComponent<UICustomizePanel>();
