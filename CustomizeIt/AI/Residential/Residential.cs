@@ -12,17 +12,16 @@ namespace CustomizeIt.AI.Residential
         public int m_sewageAccumulation;
         public int m_garbageAccumulation;
         public int m_incomeAccumulation;
+        public int m_mailAccumulation;
 
-        public void Initialize(bool isPloppable = false)
-        {
+        public void Initialize(bool isPloppable = false) {
             m_isPloppable = isPloppable;
             AssignClass();
-            m_homeCount = CalculateHomes();
-            GetConsumption(out m_electricityConsumption, out m_waterConsumption, out m_sewageAccumulation, out m_garbageAccumulation, out m_incomeAccumulation);
+            InitHomes();
+            InitConsumption();
         }
 
-        private void AssignClass()
-        {
+        private void AssignClass() {
             if (!m_info.m_mesh.name.ToLower().Contains("customizable")) return;
             var itemClass = new StringBuilder();
             if (m_info.m_mesh.name.ToLower().Contains("high")) itemClass.Append("High");
@@ -41,53 +40,18 @@ namespace CustomizeIt.AI.Residential
             m_info.m_autoRemove = true;
         }
 
-        public override void BuildingUpgraded(ushort buildingID, ref Building data)
-        {
+        public override void BuildingUpgraded(ushort buildingID, ref Building data) {
             int workCount = 0;
-            int homeCount = CalculateHomeCount(new Randomizer(buildingID), data.Width, data.Length);
+            int homeCount = CalculateHomeCount((ItemClass.Level)data.m_level, new Randomizer(buildingID), data.Width, data.Length);
             int visitCount = 0;
             SharedAI.EnsureCitizenUnits(buildingID, m_info, ref data, homeCount, workCount, visitCount, 0);
         }
 
-        public override void BuildingLoaded(ushort buildingID, ref Building data, uint version)
-        {
+        public override void BuildingLoaded(ushort buildingID, ref Building data, uint version) {
             int workCount = 0;
-            int homeCount = CalculateHomeCount(new Randomizer(buildingID), data.Width, data.Length);
+            int homeCount = CalculateHomeCount((ItemClass.Level)data.m_level, new Randomizer(buildingID), data.Width, data.Length);
             int visitCount = 0;
             SharedAI.EnsureCitizenUnits(buildingID, m_info, ref data, homeCount, workCount, visitCount, 0);
-        }
-
-        private int[] GetArray(BuildingInfo item, ItemClass.Level level)
-        {
-            int[][] array;
-
-            try
-            {
-                switch (item.m_class.m_subService)
-                {
-                    case ItemClass.SubService.ResidentialHighEco:
-                        array = RPCData.residentialEcoHigh;
-                        break;
-
-                    case ItemClass.SubService.ResidentialLowEco:
-                        array = RPCData.residentialEcoLow;
-                        break;
-
-                    case ItemClass.SubService.ResidentialHigh:
-                        array = RPCData.residentialHigh;
-                        break;
-
-                    case ItemClass.SubService.ResidentialLow:
-                    default:
-                        array = RPCData.residentialLow;
-                        break;
-                }
-                return array[(int)level];
-            }
-            catch (System.Exception)
-            {
-                return RPCData.residentialLow[0];
-            }
         }
     }
 }

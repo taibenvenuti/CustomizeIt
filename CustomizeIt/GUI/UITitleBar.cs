@@ -10,15 +10,13 @@ namespace CustomizeIt.GUI
         private UIButton closeButton;
         public UIDragHandle dragHandle;
 
-        public override void Start()
-        {
+        public override void Start() {
             base.Start();
             Instance = this;
             SetupControls();
         }
 
-        private void SetupControls()
-        {
+        private void SetupControls() {
             name = "CustomizeItTitleBar";
             isVisible = false;
             canFocus = true;
@@ -31,8 +29,7 @@ namespace CustomizeIt.GUI
             dragHandle.height = height;
             dragHandle.relativePosition = Vector3.zero;
             dragHandle.target = parent;
-            dragHandle.eventMouseUp += (c, e) =>
-            {
+            dragHandle.eventMouseUp += (c, e) => {
                 UserMod.Settings.PanelX = parent.relativePosition.x;
                 UserMod.Settings.PanelY = parent.relativePosition.y;
                 UserMod.Settings.Save();
@@ -49,15 +46,13 @@ namespace CustomizeIt.GUI
             closeButton.normalBgSprite = "DeleteLineButton";
             closeButton.hoveredBgSprite = "DeleteLineButtonHovered";
             closeButton.pressedBgSprite = "DeleteLineButtonPressed";
-            closeButton.eventClick += (component, param) =>
-            {
+            closeButton.eventClick += (component, param) => {
                 CustomizeIt.instance.CustomizePanel.isVisible = false;
-                UIUtil.DestroyDeeply(CustomizeIt.instance.CustomizePanel);                
+                UIUtil.DestroyDeeply(CustomizeIt.instance.CustomizePanel);
             };
         }
 
-        public void RecenterElements()
-        {
+        public void RecenterElements() {
             closeButton.relativePosition = new Vector3(width - closeButton.width - 10f, 10f);
             titleLabel.relativePosition = new Vector3((width - titleLabel.width) / 2f, (height - titleLabel.height) / 2);
         }

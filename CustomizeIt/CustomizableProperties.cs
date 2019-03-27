@@ -69,7 +69,6 @@ namespace CustomizeIt
         public int m_maintenanceTruckCount;
         public int m_monumentLevel;
         public int m_attractivenessAccumulation;
-       //public Rect m_animalArea;
         public int m_landValueAccumulation;
         public int m_jailCapacity;
         public int m_policeCarCount;
@@ -110,15 +109,14 @@ namespace CustomizeIt
         public int m_waterIntake;
         public int m_waterOutlet;
         public int m_waterStorage;
+        public int m_mailAccumulation;
 
 
-        public CustomizableProperties()
-        {
+        public CustomizableProperties() {
 
         }
 
-        public CustomizableProperties(BuildingInfo building)
-        {
+        public CustomizableProperties(BuildingInfo building) {
             var ai = building.m_buildingAI;
             var fields = ai.GetType().GetFields();
             var buildingFields = new Dictionary<string, FieldInfo>();

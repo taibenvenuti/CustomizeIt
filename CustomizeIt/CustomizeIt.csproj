@@ -46,36 +46,42 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\Modding\ReferenceStore\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.1.2.0.1\lib\net35\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\Programming\Modding\ReferenceStore\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ColossalManaged">
-      <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\ColossalManaged.dll</HintPath>
+      <HintPath>..\..\..\..\Programming\Modding\ReferenceStore\ColossalManaged.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ICities">
-      <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\ICities.dll</HintPath>
+      <HintPath>..\..\..\..\Programming\Modding\ReferenceStore\ICities.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PloppableRICO">
-      <HintPath>..\..\..\..\..\Modding\ReferenceStore\PloppableRICO.dll</HintPath>
+    <Reference Include="PloppableRICO, Version=1.0.6502.21553, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\SteamLibrary\steamapps\workshop\content\255710\586012417\PloppableRICO.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PrefabHook">
-      <HintPath>D:\Steam\steamapps\workshop\content\255710\530771650\PrefabHook.dll</HintPath>
+      <HintPath>C:\SteamLibrary\steamapps\workshop\content\255710\530771650\PrefabHook.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>C:\Users\Tateihuari\Modding\ReferenceStore\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Programming\Modding\ReferenceStore\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="WG_BalancedPopMod">
+      <HintPath>C:\SteamLibrary\steamapps\workshop\content\255710\426163185\WG_BalancedPopMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\Commercial\CommercialConsumption.cs" />
@@ -103,11 +109,9 @@
     <Compile Include="AI\Office\OfficeProduction.cs" />
     <Compile Include="AI\Office\OfficeWorkplace.cs" />
     <Compile Include="AI\Residential\ResidentialPloppable.cs" />
-    <Compile Include="AI\RPCData.cs" />
     <Compile Include="AI\Residential\Residential.cs" />
     <Compile Include="AI\Residential\ResidentialConsumption.cs" />
     <Compile Include="AI\Residential\ResidentialHome.cs" />
-    <Compile Include="AI\Residential\ResidentialSimulation.cs" />
     <Compile Include="AI\SharedAI.cs" />
     <Compile Include="CustomizableProperties.cs" />
     <Compile Include="CustomizeIt.cs" />
@@ -119,6 +123,7 @@
     <Compile Include="GUI\UIUtil.cs" />
     <Compile Include="Loading.cs" />
     <Compile Include="RICOHook.cs" />
+    <Compile Include="RPCDataReader.cs" />
     <Compile Include="Serialization.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TranslationFramework\Language.cs" />
@@ -129,7 +134,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Locale\dutch.xml" />
     <Content Include="Locale\english.xml">
@@ -147,12 +154,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(ProjectName)"
-del "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(ProjectName)\$(TargetFileName)"
-xcopy /y "$(TargetPath)" "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(ProjectName)"
-mkdir "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)"\Locale
-xcopy /y "$(ProjectDir)\Locale" "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(TargetName)\Locale" /s /e
-</PostBuildEvent>
+    <PostBuildEvent>if not exist "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)" mkdir "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"
+del "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)\$(TargetFileName)"
+xcopy "$(TargetDir)*.*" "$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)" /y /e</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

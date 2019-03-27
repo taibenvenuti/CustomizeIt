@@ -20,40 +20,33 @@ namespace CustomizeIt
         public void OnPreSerialize() { }
         public void OnPostDeserialize() { }
 
-        public void Save()
-        {
-            if (!UserMod.Settings.SavePerCity)
-            {
+        public void Save() {
+            if (!UserMod.Settings.SavePerCity) {
                 Entries.Clear();
 
                 foreach (var entry in CustomizeIt.instance.CustomBuildingData)
                     if (entry.Value != null)
                         Entries.Add(entry);
-            }            
+            }
 
             var fileName = configurationPath;
             var config = UserMod.Settings;
             var serializer = new XmlSerializer(typeof(CustomizeItSettings));
 
-            using (var writer = new StreamWriter(fileName))
-            {
+            using (var writer = new StreamWriter(fileName)) {
                 config.OnPreSerialize();
                 serializer.Serialize(writer, config);
             }
         }
 
-        public static CustomizeItSettings Load()
-        {
+        public static CustomizeItSettings Load() {
             var fileName = configurationPath;
             var serializer = new XmlSerializer(typeof(CustomizeItSettings));
 
-            try
-            {
-                using (var reader = new StreamReader(fileName))
-                {
+            try {
+                using (var reader = new StreamReader(fileName)) {
                     var config = serializer.Deserialize(reader) as CustomizeItSettings;
-                    if (!config.SavePerCity)
-                    {
+                    if (!config.SavePerCity) {
                         var collection = CustomizeIt.instance.CustomBuildingData;
                         collection.Clear();
 
@@ -63,9 +56,7 @@ namespace CustomizeIt
                     }
                     return config;
                 }
-            }
-            catch (Exception)
-            {
+            } catch (Exception) {
                 return new CustomizeItSettings();
             }
         }

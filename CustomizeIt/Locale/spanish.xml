@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Language UniqueName="es" ReadableName="Español" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Translations>
+    <Translation ID="CUSTOMIZE-IT-m_mailAccumulation" String="Mail Accumulation" />
     <Translation ID="CUSTOMIZE-IT-MODDESCRIPTION" String="Cambia varios valores de los edificios como acumulación de basura, consumo de energía y mucho más!" />
     <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="Coste de Construcción" />
     <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="Coste de Mantenimiento" />
@@ -103,6 +104,8 @@
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Almacenamiento de Agua" />
     <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visitantes" />
     <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Capacidad de Producción" />
+    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
+    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reiniciar" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Reiniciar Todos" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="¡Esta opción solo está disponible en el menú principal!" />

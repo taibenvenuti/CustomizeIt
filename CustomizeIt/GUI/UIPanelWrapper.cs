@@ -10,14 +10,12 @@ namespace CustomizeIt.GUI
         private UICustomizePanel customizePanel;
         public static UIPanelWrapper Instance;
 
-        public override void Start()
-        {
+        public override void Start() {
             base.Start();
             Instance = this;
             SetupControls();
         }
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
             InstanceID instanceID = CustomizeIt.instance.CityServiceWorldInfoPanel.component.isVisible ?
             (InstanceID)CustomizeIt.instance.CityServiceWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(CustomizeIt.instance.CityServiceWorldInfoPanel) :
@@ -25,19 +23,16 @@ namespace CustomizeIt.GUI
             (InstanceID)CustomizeIt.instance.ZonedBuildingWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(CustomizeIt.instance.ZonedBuildingWorldInfoPanel) :
             (InstanceID)CustomizeIt.instance.ShelterWorldInfoPanel.GetType().GetField("m_InstanceID", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(CustomizeIt.instance.ShelterWorldInfoPanel);
             var building = BuildingManager.instance.m_buildings.m_buffer[instanceID.Building].Info;
-            if (building != CustomizeIt.instance.CurrentBuilding)
-            {
+            if (building != CustomizeIt.instance.CurrentBuilding) {
                 UIUtil.DestroyDeeply(this);
             }
         }
 
-        public override void OnDestroy()
-        {
+        public override void OnDestroy() {
             base.OnDestroy();
             CustomizeIt.instance.SaveBuilding(CustomizeIt.instance.CurrentBuilding);
         }
-        private void SetupControls()
-        {
+        private void SetupControls() {
             isVisible = false;
             isInteractive = true;
             name = "CustomizeItPanelWrapper";

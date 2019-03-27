@@ -5,14 +5,14 @@ namespace CustomizeIt.AI.Industrial
 {
     public partial class CustomizableIndustrialBuildingAI : IndustrialBuildingAI, ICustomAI
     {
-        public override int CalculateProductionCapacity(Randomizer r, int width, int length)
+        public override int CalculateProductionCapacity(ItemClass.Level level, Randomizer r, int width, int length)
         {
             return m_productionCapacity;
         }
 
-        public int CalculateProduction()
+        public void InitProduction()
         {
-            var r = new Randomizer(GetHashCode());
+            var r = new Randomizer(m_info.m_prefabDataIndex);
             var subService = m_info.m_class.m_subService;
             var level = m_info.m_class.m_level;
             var width = m_info.m_cellWidth;
@@ -20,9 +20,7 @@ namespace CustomizeIt.AI.Industrial
             int num;
             if (UserMod.Settings.UseRPCValues || m_isPloppable)
             {
-                var lvl = level >= 0 ? level : 0;
-                var array = GetArray(m_info, lvl);
-                return Mathf.Max(100, width * length * array[RPCData.PRODUCTION]) / 100;
+                //return Mathf.Max(100, width * length * array[RPCData.PRODUCTION]) / 100;
             }
             if (subService == ItemClass.SubService.IndustrialGeneric)
             {
@@ -47,7 +45,7 @@ namespace CustomizeIt.AI.Industrial
             {
                 num = Mathf.Max(100, width * length * num + r.Int32(100u)) / 100;
             }
-            return num;
+            m_productionCapacity = num;
         }
     }
 }

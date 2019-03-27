@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Language UniqueName="zh-cn  " ReadableName="简体中文" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Language UniqueName="zh-cn" ReadableName="简体中文" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Translations>
+    <Translation ID="CUSTOMIZE-IT-m_mailAccumulation" String="Mail Accumulation" />
     <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="建设成本" />
     <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="维护成本" />
     <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="用电量" />
@@ -102,6 +103,8 @@
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="水储量" />
     <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visitors" />
     <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Production Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
+    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="重置" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="全部重置" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="This option is only available in the main menu!" />

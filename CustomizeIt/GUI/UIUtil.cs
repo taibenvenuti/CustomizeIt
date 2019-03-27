@@ -1,7 +1,5 @@
 ﻿using ColossalFramework.UI;
-using CustomizeIt.AI.Residential;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 namespace CustomizeIt.GUI
@@ -15,10 +13,8 @@ namespace CustomizeIt.GUI
 
         public static Dictionary<string, string> FieldNames => UpdateTranslations();
 
-        public static Dictionary<string, string> UpdateTranslations()
-        {
-            return new Dictionary<string, string>()
-            {
+        public static Dictionary<string, string> UpdateTranslations() {
+            return new Dictionary<string, string>() {
                 ["m_visitors"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_visitors"),
                 ["m_productionCapacity"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_productionCapacity"),
                 ["m_homeCount"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_homeCount"),
@@ -122,11 +118,11 @@ namespace CustomizeIt.GUI
                 ["m_waterIntake"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_waterIntake"),
                 ["m_waterOutlet"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_waterOutlet"),
                 ["m_waterStorage"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_waterStorage"),
+                ["m_mailAccumulation"] = UserMod.Translation.GetTranslation("CUSTOMIZE-IT-m_mailAccumulation"),
             };
         }
 
-        public static UIButton CreateToggleButton(UIComponent parentComponent, Vector3 offset, UIAlignAnchor anchor, MouseEventHandler handler)
-        {
+        public static UIButton CreateToggleButton(UIComponent parentComponent, Vector3 offset, UIAlignAnchor anchor, MouseEventHandler handler) {
             UIButton uibutton = UIView.GetAView().AddUIComponent(typeof(UIButton)) as UIButton;
             uibutton.name = "CustomizeItButton";
             uibutton.width = 26f;
@@ -147,8 +143,7 @@ namespace CustomizeIt.GUI
             return uibutton;
         }
 
-        public static UIButton CreateResetButton(UIComponent parentComponent)
-        {
+        public static UIButton CreateResetButton(UIComponent parentComponent) {
             UIButton button = parentComponent.AddUIComponent<UIButton>();
             button.name = "CustomizeItResetButton";
             button.text = ResetText;
@@ -164,29 +159,25 @@ namespace CustomizeIt.GUI
             button.hoveredBgSprite = "ButtonMenuHovered";
             button.focusedBgSprite = "ButtonMenu";
             button.pressedBgSprite = "ButtonMenuPressed";
-            button.eventClick += (c, e) =>
-            {
+            button.eventClick += (c, e) => {
                 var building = CustomizeIt.instance.CurrentBuilding;
                 CustomizeIt.instance.ResetBuilding(building);
-                var ai = building.m_buildingAI;                
-                foreach (var input in UICustomizePanel.Instance.Inputs)
-                {                    
-                    if(input is UITextField)
+                var ai = building.m_buildingAI;
+                foreach (var input in UICustomizePanel.Instance.Inputs) {
+                    if (input is UITextField)
                         ((UITextField)input).text = ai.GetType().GetField(input.name)?.GetValue(ai)?.ToString();
-                    else if(input is UICheckBox)
+                    else if (input is UICheckBox)
                         ((UICheckBox)input).isChecked = (bool)ai.GetType().GetField(input.name)?.GetValue(ai);
                 }
             };
             return button;
         }
-        public static void DestroyDeeply(UIComponent component)
-        {
+        public static void DestroyDeeply(UIComponent component) {
             if (component == null) return;
 
             UIComponent[] children = component.GetComponentsInChildren<UIComponent>();
 
-            if (children != null && children.Length > 0)
-            {
+            if (children != null && children.Length > 0) {
                 for (int i = 0; i < children.Length; i++)
                     if (children[i].parent == component)
                         DestroyDeeply(children[i]);
@@ -195,8 +186,7 @@ namespace CustomizeIt.GUI
             component = null;
         }
 
-        public static UICheckBox CreateCheckBox(UIComponent parent, string fieldName)
-        {
+        public static UICheckBox CreateCheckBox(UIComponent parent, string fieldName) {
             UICheckBox checkBox = parent.AddUIComponent<UICheckBox>();
 
             checkBox.name = fieldName;
@@ -219,15 +209,13 @@ namespace CustomizeIt.GUI
             return checkBox;
         }
 
-        private static void EventCheckChangedHandler(UIComponent component, bool value)
-        {
+        private static void EventCheckChangedHandler(UIComponent component, bool value) {
             var ai = CustomizeIt.instance.CurrentBuilding.m_buildingAI;
             var type = ai.GetType();
             type.GetField(component.name)?.SetValue(ai, value);
         }
 
-        public static UITextField CreateTextField(UIComponent parent, string fieldName)
-        {
+        public static UITextField CreateTextField(UIComponent parent, string fieldName) {
             UITextField textField = parent.AddUIComponent<UITextField>();
 
             textField.name = fieldName;
@@ -255,30 +243,24 @@ namespace CustomizeIt.GUI
             return textField;
         }
 
-        private static void EventTextSubmittedHandler(UIComponent component, string value)
-        {
-            if(int.TryParse(value, out int result))
-            {
+        private static void EventTextSubmittedHandler(UIComponent component, string value) {
+            if (int.TryParse(value, out int result)) {
                 var ai = CustomizeIt.instance.CurrentBuilding.m_buildingAI;
                 var type = ai.GetType();
-                if (component.name.ToLower().Contains("capacity") && result == 0)
-                {
+                if (component.name.ToLower().Contains("capacity") && result == 0) {
                     result = 1;
                     ((UITextField)component).text = "1";
                 }
                 type.GetField(component.name)?.SetValue(ai, result);
-                if ((component.name.ToLower().Contains("homecount") || component.name.ToLower().Contains("placecount") || component.name.ToLower().Contains("sewage") || component.name.ToLower().Contains("garbage")))
-                {
+                if ((component.name.ToLower().Contains("homecount") || component.name.ToLower().Contains("placecount") || component.name.ToLower().Contains("sewage") || component.name.ToLower().Contains("garbage"))) {
                     bool isHomeOrWorkplace = component.name.ToLower().Contains("homecount") || component.name.ToLower().Contains("placecount");
                     bool isSewage = component.name.ToLower().Contains("sewage");
                     bool isGarbage = component.name.ToLower().Contains("garbage");
-                    SimulationManager.instance.AddAction(() => 
-                    {
-                        for (ushort i = 0; i < BuildingManager.instance.m_buildings.m_buffer.Length; i++)
-                        {
+                    SimulationManager.instance.AddAction(() => {
+                        for (ushort i = 0; i < BuildingManager.instance.m_buildings.m_buffer.Length; i++) {
                             var building = BuildingManager.instance.m_buildings.m_buffer[i];
                             if (building.m_flags == 0 || building.Info == null || building.Info != CustomizeIt.instance.CurrentBuilding) continue;
-                            if(isHomeOrWorkplace) building.Info.m_buildingAI.BuildingUpgraded(i, ref BuildingManager.instance.m_buildings.m_buffer[i]);
+                            if (isHomeOrWorkplace) building.Info.m_buildingAI.BuildingUpgraded(i, ref BuildingManager.instance.m_buildings.m_buffer[i]);
                             if (isSewage) BuildingManager.instance.m_buildings.m_buffer[i].m_sewageBuffer = 0;
                             if (isGarbage) BuildingManager.instance.m_buildings.m_buffer[i].m_garbageBuffer = 0;
                         }
@@ -287,8 +269,7 @@ namespace CustomizeIt.GUI
             }
         }
 
-        private static void EventKeyPressedHandler(UIComponent component, UIKeyEventParameter eventParam)
-        {
+        private static void EventKeyPressedHandler(UIComponent component, UIKeyEventParameter eventParam) {
             if (!char.IsControl(eventParam.character) && !char.IsDigit(eventParam.character))
                 eventParam.Use();
         }

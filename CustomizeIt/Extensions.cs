@@ -15,8 +15,7 @@ namespace CustomizeIt
 {
     public static class Extensions
     {
-        public static void LoadCustomProperties(this BuildingInfo building, CustomizableProperties properties)
-        {
+        public static void LoadCustomProperties(this BuildingInfo building, CustomizableProperties properties) {
             var ai = building.m_buildingAI;
             var buildingFields = ai.GetType().GetFields();
             var customFields = properties.GetType().GetFields();
@@ -24,46 +23,36 @@ namespace CustomizeIt
             foreach (var customField in customFields)
                 fields.Add(customField.Name, customField);
 
-            foreach (var buildingField in buildingFields)
-            {
-                try
-                {
+            foreach (var buildingField in buildingFields) {
+                try {
                     if (fields.TryGetValue(buildingField.Name, out FieldInfo fieldInfo))
                         buildingField.SetValue(ai, fieldInfo.GetValue(properties));
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     Debug.LogWarning(e);
                 }
             }
         }
 
-        public static UIPanelWrapper GenerateCustomizationPanel(this BuildingInfo building)
-        {
+        public static UIPanelWrapper GenerateCustomizationPanel(this BuildingInfo building) {
             CustomizeIt.instance.CurrentBuilding = building;
             UIUtil.DestroyDeeply(UIView.Find("CustomizeItPanelWrapper"));
-            UIPanelWrapper wrapper = UIView.GetAView().AddUIComponent(typeof(UIPanelWrapper)) as UIPanelWrapper;            
+            UIPanelWrapper wrapper = UIView.GetAView().AddUIComponent(typeof(UIPanelWrapper)) as UIPanelWrapper;
             return wrapper;
         }
-        public static CustomizableProperties GetCustomizableProperties(this BuildingInfo building)
-        {            
+        public static CustomizableProperties GetCustomizableProperties(this BuildingInfo building) {
             return new CustomizableProperties(building);
         }
 
-        public static CustomizableProperties ResetProperties(this BuildingInfo building)
-        {
+        public static CustomizableProperties ResetProperties(this BuildingInfo building) {
             if (CustomizeIt.instance.OriginalBuildingData.TryGetValue(building.name, out CustomizableProperties properties))
                 return properties;
             return null;
-        }        
+        }
 
-        public static void Convert(this BuildingInfo building)
-        {
-            try
-            {
+        public static void Convert(this BuildingInfo building) {
+            try {
                 if (building == null || building.m_buildingAI == null || building.m_mesh == null) return;
-                if (building.m_buildingAI.GetType().IsSubclassOf(typeof(PrivateBuildingAI)) || building.m_mesh.name.ToLower().Contains("customizable"))
-                {
+                if (building.m_buildingAI.GetType().IsSubclassOf(typeof(PrivateBuildingAI)) || building.m_mesh.name.ToLower().Contains("customizable")) {
                     PrivateBuildingAI newAI;
                     if (building.m_buildingAI.GetType() == typeof(ResidentialBuildingAI) || building.m_buildingAI.GetType().IsSubclassOf(typeof(ResidentialBuildingAI)) || building.m_mesh.name.ToLower().Contains("residential"))
                         newAI = building.gameObject.AddComponent<CustomizableResidentialBuildingAI>();
@@ -89,22 +78,19 @@ namespace CustomizeIt
                     building.m_buildingAI = newAI;
                 }
                 CustomizeIt.instance.Customize(building);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Debug.LogWarning(ex);
             }
         }
 
-        public static void FixFlags(ref this Building buildingData)
-        {
+        public static void FixFlags(ref this Building buildingData) {
+            buildingData.m_garbageBuffer = 100;
             buildingData.m_majorProblemTimer = 0;
             buildingData.m_levelUpProgress = 0;
             buildingData.m_flags &= ~Building.Flags.ZonesUpdated;
             buildingData.m_flags &= ~Building.Flags.Abandoned;
             buildingData.m_flags &= ~Building.Flags.Demolishing;
             buildingData.m_problems &= ~Notification.Problem.TurnedOff;
-            buildingData.m_problems &= ~Notification.Problem.LandValueLow;
         }
     }
 }

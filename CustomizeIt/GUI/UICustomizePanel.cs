@@ -12,15 +12,13 @@ namespace CustomizeIt.GUI
         private List<UILabel> labels;
         internal List<UIComponent> Inputs;
 
-        public override void Start()
-        {
+        public override void Start() {
             base.Start();
             Instance = this;
-            SetupControls();       
+            SetupControls();
         }
 
-        private void SetupControls()
-        {
+        private void SetupControls() {
             name = "CustomizeItPanel";
             isVisible = false;
             canFocus = true;
@@ -35,20 +33,16 @@ namespace CustomizeIt.GUI
             Inputs = new List<UIComponent>();
             labels = new List<UILabel>();
             float widest = 0;
-            foreach (var field in fields.Where(f => fieldsToGet.Contains(f.Name)))
-            {
+            foreach (var field in fields.Where(f => fieldsToGet.Contains(f.Name))) {
                 var label = AddUIComponent<UILabel>();
                 label.name = field.Name + "Label";
                 label.text = UIUtil.FieldNames[field.Name];
                 label.textScale = 0.9f;
                 label.isInteractive = false;
-                if (field.FieldType == typeof(int) || field.FieldType == typeof(float))
-                {
+                if (field.FieldType == typeof(int) || field.FieldType == typeof(float)) {
                     Inputs.Add(UIUtil.CreateTextField(this, field.Name));
                     labels.Add(label);
-                }
-                else if (field.FieldType == typeof(bool))
-                {
+                } else if (field.FieldType == typeof(bool)) {
                     Inputs.Add(UIUtil.CreateCheckBox(this, field.Name));
                     labels.Add(label);
                 }
@@ -61,22 +55,19 @@ namespace CustomizeIt.GUI
             width = UIPanelWrapper.Instance.width = UITitleBar.Instance.width = UITitleBar.Instance.dragHandle.width = widest;
             UITitleBar.Instance.RecenterElements();
             AlignChildren();
-            height = (Inputs.Count * (UIUtil.textFieldHeight + UIUtil.textFieldMargin)) + (UIUtil.textFieldMargin * 3);            
+            height = (Inputs.Count * (UIUtil.textFieldHeight + UIUtil.textFieldMargin)) + (UIUtil.textFieldMargin * 3);
             UIPanelWrapper.Instance.height = height + UITitleBar.Instance.height;
             UIPanelWrapper.Instance.relativePosition = new Vector3(UserMod.Settings.PanelX, UserMod.Settings.PanelY);
             isVisible = UIPanelWrapper.Instance.isVisible = UITitleBar.Instance.isVisible = UITitleBar.Instance.dragHandle.isVisible = true;
         }
 
-        private void AlignChildren()
-        {
+        private void AlignChildren() {
             float inputX = width - UIUtil.textFieldWidth - (UIUtil.textFieldMargin * 2);
-            
-            for (int i = 0; i < Inputs.Count; i++)
-            {
+
+            for (int i = 0; i < Inputs.Count; i++) {
                 float finalY = (i * UIUtil.textFieldHeight) + ((UIUtil.textFieldMargin) * (i + 2));
 
-                if (i < labels.Count)
-                {
+                if (i < labels.Count) {
                     float labelX = inputX - labels[i].width - (UIUtil.textFieldMargin * 2);
                     labels[i].relativePosition = new Vector3(labelX, finalY + 4);
                 }

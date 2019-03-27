@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Language UniqueName="jp" ReadableName="日本語" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Language UniqueName="ja" ReadableName="日本語" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Translations>
+    <Translation ID="CUSTOMIZE-IT-m_mailAccumulation" String="Mail Accumulation" />
     <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="建設コスト" />
     <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="メンテナンスコスト" />
     <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="電気使用量" />
@@ -102,6 +103,8 @@
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="貯水量" />
     <Translation ID="CUSTOMIZE-IT-m_visitors" String="観光客数" />
     <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="処理の限界効率" />
+    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
+    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="リセット" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="全てをリセット" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="メインメニュー内のみ有効" />

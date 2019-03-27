@@ -103,6 +103,9 @@
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Opslag" />
     <Translation ID="CUSTOMIZE-IT-m_visitors" String="Bezoekers" />
     <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Productie Capaciteit" />
+    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
+    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_mailAccumulation" String="Mail Accumulation" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reset" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Alles Resetten" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="Deze optie is alleen beschikbaar in het hoofdmenu!" />

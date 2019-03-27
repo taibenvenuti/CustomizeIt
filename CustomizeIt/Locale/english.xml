@@ -2,8 +2,7 @@
 <Language UniqueName="en" ReadableName="English" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Translations>
     <Translation ID="CUSTOMIZE-IT-MODDESCRIPTION" String="Change various values on buildings such as garbage accumulation, energy consumption and more!" />
-    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
-    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
+    <Translation ID="CUSTOMIZE-IT-m_mailAccumulation" String="Mail Accumulation" />
     <Translation ID="CUSTOMIZE-IT-m_constructionCost" String="Construction Cost" />
     <Translation ID="CUSTOMIZE-IT-m_maintenanceCost" String="Maintenance Cost" />
     <Translation ID="CUSTOMIZE-IT-m_electricityConsumption" String="Electricity Consumption" />
@@ -105,6 +104,8 @@
     <Translation ID="CUSTOMIZE-IT-m_waterStorage" String="Water Storage" />
     <Translation ID="CUSTOMIZE-IT-m_visitors" String="Visitors" />
     <Translation ID="CUSTOMIZE-IT-m_productionCapacity" String="Production Capacity" />
+    <Translation ID="CUSTOMIZE-IT-m_homeCount" String="Home Count" />
+    <Translation ID="CUSTOMIZE-IT-m_incomeAccumulation" String="Income Accumulation" />
     <Translation ID="CUSTOMIZE-IT-RESET" String="Reset" />
     <Translation ID="CUSTOMIZE-IT-RESET-ALL" String="Reset All" />
     <Translation ID="CUSTOMIZE-IT-OPTION-MAINMENU-TOOLTIP" String="This option is only available in the main menu!" />

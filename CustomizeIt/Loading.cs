@@ -12,54 +12,46 @@ namespace CustomizeIt
     {
         private AppMode appMode;
         private bool done;
-        private CustomizeIt Instance => CustomizeIt.instance; 
+        private CustomizeIt Instance => CustomizeIt.instance;
 
-        public override void OnCreated(ILoading loading)
-        {
+        public override void OnCreated(ILoading loading) {
             base.OnCreated(loading);
             appMode = loading.currentMode;
             if (!IsHooked() || loading.currentMode != AppMode.Game) return;
-            //if (Util.IsRICOActive())
-            //{
-            //    var harmony = HarmonyInstance.Create("com.tpb.customizeit");
-            //    harmony.PatchAll(Assembly.GetExecutingAssembly());
-            //}
+            if (Util.IsRICOActive()) {
+                var harmony = HarmonyInstance.Create("com.tpb.customizeit");
+                harmony.PatchAll(Assembly.GetExecutingAssembly());
+            }
             BuildingInfoHook.OnPostInitialization += OnPostBuildingInit;
             BuildingInfoHook.Deploy();
-        }        
+        }
 
-        public override void OnLevelLoaded(LoadMode mode)
-        {
+        public override void OnLevelLoaded(LoadMode mode) {
             base.OnLevelLoaded(mode);
             if (appMode != AppMode.Game) return;
-            if (!IsHooked())
-            {
+            if (!IsHooked()) {
                 UIView.library.ShowModal<ExceptionPanel>("ExceptionPanel").SetMessage(
                     "Missing dependency",
                     $"{Instance.name} requires the 'Prefab Hook' mod to work properly. Please subscribe to the mod and restart the game!",
                     false);
                 return;
             }
-            while (!done)
-            {
-                if (LoadingManager.instance.m_loadingComplete)
-                {
+            while (!done) {
+                if (LoadingManager.instance.m_loadingComplete) {
                     CustomizeIt.instance.Initialize();
                     done = true;
                 }
-            }            
+            }
         }
 
-        public override void OnLevelUnloading()
-        {
+        public override void OnLevelUnloading() {
             base.OnLevelUnloading();
             if (!IsHooked()) return;
             done = false;
             CustomizeIt.instance.Release();
         }
 
-        public override void OnReleased()
-        {
+        public override void OnReleased() {
             base.OnReleased();
             Instance.ToggleOptionPanelControls(false);
             if (!IsHooked()) return;
@@ -67,13 +59,11 @@ namespace CustomizeIt
             BuildingInfoHook.Revert();
         }
 
-        public void OnPostBuildingInit(BuildingInfo building)
-        {
+        public void OnPostBuildingInit(BuildingInfo building) {
             building.Convert();
         }
 
-        public static bool IsHooked()
-        {
+        public static bool IsHooked() {
             var plugins = PluginManager.instance.GetPluginsInfo();
             return (from plugin in plugins.Where(p => p.isEnabled)
                     select plugin.GetInstances<IUserMod>() into instances
